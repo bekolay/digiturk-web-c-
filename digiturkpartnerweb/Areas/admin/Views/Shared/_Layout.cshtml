@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/datatable.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/datatable.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    @if (Request.IsAuthenticated == true)
+    {
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container">
+                <a routerLink="~/admin/" class="navbar-brand" href="#">Digiturk</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/admin/">Anaysafa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/admin/pakets">Paketler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/admin/kategoris">Kategoriler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/admin/basvurus">Başvurular</a>
+                    </li>
+                    @if (Request.IsAuthenticated && HttpContext.Current.User.IsInRole
+            ("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/admin/kullanicis">Kullanıcılar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="~/admin/site_ayar">Site Ayar</a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/kullanicis/cikis">Çıkış Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    }
+
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        <script src="~/Content/jquery.js"></script>
+        @Scripts.Render("~/bundles/bootstrap")
+        <script src="~/Scripts/jquery.dataTables.min.js"></script>
+        <script src="~/Scripts/dataTables-data.js"></script>
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

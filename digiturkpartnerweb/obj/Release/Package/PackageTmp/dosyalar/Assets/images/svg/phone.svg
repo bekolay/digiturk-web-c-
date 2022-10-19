@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="15px" height="18px" viewBox="0 0 15 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/phone</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-1" transform="translate(-967.000000, -153.000000)" fill="#FFFFFF">
+            <g id="Body" transform="translate(0.000000, 72.000000)">
+                <g id="form_home1" transform="translate(935.000000, 50.000000)">
+                    <g id="call_center">
+                        <g id="icon/phone-copy-4" transform="translate(9.000000, 10.000000)">
+                            <path d="M33.346475,32.9548053 C32.5360099,32.5264552 31.490384,33.0291966 31.0017654,33.3180629 C29.244358,32.382772 27.3474739,29.6551902 27.064621,27.6556235 C27.5052476,27.2908661 28.3451077,26.4668622 28.2212284,25.5792658 L27.7464074,21.0356958 L23.485317,21 L23.3872333,21.3881547 C22.4252935,25.2016098 23.275052,29.3951206 25.719045,32.8942123 C28.1411417,36.3615078 31.7357432,38.5728498 35.5808029,38.9601047 L35.9785367,39 L37.4,34.9519723 L33.346475,32.9548053 Z" id="icon/phone"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="85px" viewBox="0 0 1440 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>BB4DCE55-8601-4F35-89AD-8C7CB96069E2</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="3.061617e-15%" id="linearGradient-1">
+            <stop stop-color="#613E74" offset="0%"></stop>
+            <stop stop-color="#321D40" offset="97.8052746%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage-7.4.1" transform="translate(0.000000, -70.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Header-1" transform="translate(0.000000, 70.000000)">
+                <g id="background">
+                    <path d="M605,84 L585,84 L585,39 L0,39 L0,0 L1440,0 L1440,39 L855,39 L855,84 L835,84 L855,84 L855,39 L827,39 C820.372583,39 815,44.372583 815,51 L815,84 L835,84 L815,84 L815,39 L855,39 L815,39 L815,49 C815,68.882251 798.882251,85 779,85 L661,85 C641.117749,85 625,68.882251 625,49 L625,84 L605,84 L625,84 L625,51 C625,44.372583 619.627417,39 613,39 L585,39 L585,84 L605,84 Z" id="image/logo_background"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

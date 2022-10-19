@@ -1,0 +1,362 @@
+
+section.campaign-sales-detail .text-area p {
+    width: 354px !important;
+}
+
+section.campaign-sales-detail .right-campaign-sale {
+    border-radius: 20px;
+    padding: 33px 0px 0px 0px;
+    position: sticky;
+    top: 20px;
+    background: url(../images/base/form_bg%402x.png);
+}
+
+    section.campaign-sales-detail .right-campaign-sale.mobile {
+        display: none;
+    }
+
+    section.campaign-sales-detail .right-campaign-sale .price-area {
+        justify-content: space-between;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 0 12px 0 16px;
+        background: #672E85;
+        background: -webkit-linear-gradient(to right, #672E85, #1f1c18);
+        background: linear-gradient(to right, #672E85, #1f1c18);
+        text-align: center;
+        opacity: 0;
+    }
+
+        section.campaign-sales-detail .right-campaign-sale .price-area .text {
+            width: 110%;
+            border-right: 1px solid rgba(255, 255, 255, 0.5);
+            line-height: 46px;
+            padding: 14px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section.campaign-sales-detail .right-campaign-sale .price-area .new-price {
+            width: 70%;
+            padding: 7px 10px 10px 20px;
+        }
+
+            section.campaign-sales-detail .right-campaign-sale .price-area .new-price em sup {
+                top: -2.5em;
+                position: relative;
+                line-height: 0px;
+                left: 4px;
+            }
+
+            section.campaign-sales-detail .right-campaign-sale .price-area .new-price em sub {
+                bottom: 0em;
+                vertical-align: baseline;
+                position: relative;
+                left: -30px;
+            }
+
+    section.campaign-sales-detail .right-campaign-sale .total-price {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    section.campaign-sales-detail .right-campaign-sale .top-area {
+        padding: 0px 20px;
+    }
+
+        section.campaign-sales-detail .right-campaign-sale .top-area .detail-img {
+            margin: auto;
+            display: block;
+            margin-top: 20px;
+        }
+
+    section.campaign-sales-detail .right-campaign-sale.mobile .subtext {
+        line-height: 18px;
+        width: 100%;
+    }
+
+    section.campaign-sales-detail .right-campaign-sale .subtext {
+        line-height: 21px !important;
+    }
+
+    section.campaign-sales-detail .right-campaign-sale .subtext {
+        width: 175px;
+    }
+
+    section.campaign-sales-detail .right-campaign-sale .bottom-area {
+        margin-top: 25px;
+        border-top: 2px solid #813D9B;
+        padding: 13px 35px 0px 35px;
+    }
+
+        section.campaign-sales-detail .right-campaign-sale .bottom-area ul {
+            margin-bottom: 23px;
+        }
+
+            section.campaign-sales-detail .right-campaign-sale .bottom-area ul li {
+                line-height: 18px;
+                margin-top: 10px;
+                color: white;
+            }
+
+                section.campaign-sales-detail .right-campaign-sale .bottom-area ul li::after {
+                    height: 0px;
+                    width: 0px;
+                    background: transparent;
+                }
+
+        section.campaign-sales-detail .right-campaign-sale .bottom-area .btn-area {
+            padding: 22px 0px 30px 0px;
+            display: block;
+            display: flex;
+            justify-content: center;
+        }
+
+            section.campaign-sales-detail .right-campaign-sale .bottom-area .btn-area a {
+                background: #7CC93D;
+                padding: 20px;
+                text-align: center;
+                display: block;
+                border-radius: 25px;
+                background-color: #7FCD3E;
+                background: #7FCD3E linear-gradient( 180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%);
+                box-shadow: inset 0 1px 1px 0 rgba(255,255,255,0.5), 0 18px 8px -11px rgba(0,0,0,0.3);
+                width: 210px;
+            }
+
+                section.campaign-sales-detail .right-campaign-sale .bottom-area .btn-area a:hover {
+                    color: white;
+                }
+
+section.campaign-sales-detail .card-body .list-style-none {
+    padding-left: 10px !important;
+}
+
+    section.campaign-sales-detail .card-body .list-style-none li:before {
+        height: 0px !important;
+        width: 0px !important;
+    }
+
+.lh-20 {
+    line-height: 20px !important;
+}
+
+section.failed-sale {
+    padding: 50px;
+}
+
+    section.failed-sale .card-body .description-area h5 {
+        margin-bottom: 10px;
+    }
+
+    section.failed-sale .card-body .fail-img {
+        padding: 80px 0px 46px 0px;
+    }
+
+    section.failed-sale .card-body .pt-34 {
+        padding-top: 34px;
+    }
+
+    section.failed-sale .card-body {
+        border: 1px solid #D0D0D0;
+        border-radius: 8px;
+        margin: 20px 0px;
+    }
+
+    section.failed-sale .button-area a {
+        padding: 20px 0px;
+        background: #66C331;
+        color: white;
+        border-radius: 5px;
+        display: block;
+        width: 278px;
+        margin: 50px auto 40px auto;
+    }
+
+section.succeed-sale {
+    padding: 50px;
+}
+
+    section.succeed-sale .description-area {
+        margin: 0px 0px 20px 0px;
+    }
+
+    section.succeed-sale .card-body {
+        border: 1px solid #D0D0D0;
+        border-radius: 8px;
+        padding: 50px 30px;
+    }
+
+    section.succeed-sale .img-area {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        margin-top: 40px;
+    }
+
+        section.succeed-sale .img-area .img-card {
+            width: 100%;
+        }
+
+            section.succeed-sale .img-area .img-card img {
+                margin-bottom: 20px;
+            }
+
+    section.succeed-sale .button-area a {
+        padding: 20px 0px;
+        background: #66C331;
+        color: white;
+        border-radius: 5px;
+        display: block;
+        width: 278px;
+        margin: 50px auto 40px auto;
+    }
+
+    section.succeed-sale .pt-40 {
+        padding-top: 40px;
+    }
+
+@media (max-width: 768px) {
+    section.succeed-sale {
+        padding: 30px 0px;
+    }
+
+    section .failed-sale .card-body {
+        border: 0px solid #D0D0D0;
+    }
+
+        section.failed-sale .card-body .fail-img img {
+            width: 100%;
+        }
+
+        section.failed-sale .card-body .fail-img {
+            padding: 0px 60px 46px 60px !important;
+        }
+
+    section.failed-sale .button-area a {
+        padding: 20px 85px;
+        background: #66C331;
+        color: white;
+        border-radius: 5px;
+        display: block;
+        width: 90%;
+        margin: 50px auto 70px auto;
+    }
+
+    section.failed-sale .description-area h5 {
+        font-size: 36px !important;
+    }
+
+    section.failed-sale .description-area h4 {
+        font-size: 36px !important;
+    }
+
+    section.succeed-sale .img-area {
+        flex-direction: column;
+    }
+
+        section.succeed-sale .img-area .img-card {
+            margin-top: 20px;
+        }
+
+    section.succeed-sale .card-body {
+        border: 0px solid #D0D0D0;
+    }
+
+    section.succeed-sale .pt-40 {
+        padding-top: 20px;
+    }
+
+    section.succeed-sale .button-area a {
+        padding: 20px 0px;
+        background: #66C331;
+        color: white;
+        border-radius: 5px;
+        display: block;
+        width: 90%;
+        margin: 50px auto 70px auto;
+    }
+    section.succeed-sale .description-area h5 {
+        font-size: 36px !important;
+    }
+
+    section.succeed-sale .description-area h4 {
+        font-size: 36px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    section.failed-sale {
+        padding: 30px 10px 10px 10px;
+    }
+
+        section.failed-sale .card-body .fail-img {
+            padding: 50px 20px 46px 20px;
+        }
+
+        section.failed-sale .card-body .fail-img {
+            padding: 0px 10px 46px 10px !important;
+        }
+
+        section.failed-sale .button-area a {
+            padding: 20px 0px;
+            background: #66C331;
+            color: white;
+            border-radius: 5px;
+            display: block;
+            width: 90%;
+            margin: 50px auto 70px auto;
+            white-space: nowrap;
+        }
+
+        section.failed-sale .description-area h5 {
+            font-size: 27px !important;
+        }
+
+        section.failed-sale .description-area h4 {
+            font-size: 27px !important;
+            margin-top: 8px;
+        }
+    section.succeed-sale .description-area h5 {
+        font-size: 27px !important;
+    }
+    section.succeed-sale .card-body {
+        border: 0px solid #D0D0D0;
+        padding: 20px 30px;
+    }
+    section.succeed-sale .description-area h4 {
+        font-size: 27px !important;
+        margin-top: 8px;
+    }
+}
+
+.super-lig .modal-content .modal-body .btn-modal {
+    bottom: 9% !important;
+    background-color: #08CB15 !important;
+    background: #08CB15 !important;
+    width: 250px !important;
+    border-radius: 11px !important;
+    padding: 15px 0px !important;
+}
+
+@media (max-width: 991px) {
+    section .campaign-sales-detail .right-campaign-sale {
+        display: none;
+    }
+
+        section.campaign-sales-detail .right-campaign-sale .bottom-area .btn-area a {
+            width: 100%;
+        }
+
+        section.campaign-sales-detail .right-campaign-sale.mobile {
+            display: block !important;
+            margin: 20px 0px 10px 0px;
+        }
+}
+
+@media (max-width:600px) {
+    section.campaign-detail #accordion .card .card-header .plus {
+        display: none;
+    }
+}

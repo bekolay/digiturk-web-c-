@@ -1,0 +1,212 @@
+﻿@model digiturkveri.paket
+
+@{
+    ViewBag.Title = "Paket Detay";
+}
+
+
+<div class="container">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Genel Bilgiler</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">Paket Adı</label>
+                                @Html.EditorFor(model => model.padi, new { htmlAttributes = new { @style = "", @class = "form-control", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Ay Sayısı</label>
+                                @Html.EditorFor(model => model.paysayi, new { htmlAttributes = new { @class = "form-control ", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Fiyat</label>
+                                @Html.EditorFor(model => model.pfiyat, new { htmlAttributes = new { @class = "form-control ", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div style="padding-top: 15px;" class="form-group">
+                                <label for="inputName">Paket Kampanya</label>
+                                @Html.EditorFor(model => model.pkampdetay, new { htmlAttributes = new { @class = "form-control ", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div style="padding-top: 15px;" class="form-group">
+                                <label for="inputName">Açıklama Kısa Detay</label>
+                                @Html.EditorFor(model => model.paciklama, new { htmlAttributes = new { @class = "form-control ", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div style="padding-top: 5px;" class="form-group">
+                                <label for="inputProjectLeader">Kategori</label>
+                            </div>
+                            <div class="controls">
+                                @Html.DropDownList("kateid", null, htmlAttributes: new { @class = "form-control" })
+                            </div>
+                            <div style="padding-top: 5px;" class="form-group">
+                                <label for="inputProjectLeader">Resim Yolu</label>
+                            </div>
+                            <div class="controls">
+                                @Html.DropDownList("prid", null, htmlAttributes: new { @class = "form-control" })
+                            </div>
+                            <div style="padding-top: 19px;" class="form-group">
+                                <label for="inputProjectLeader">Paket Yazı</label>
+                                @Html.TextAreaFor(model => model.pyazi, new { htmlAttributes = new { @class = "form-control", size = "25", @required = "required", autofocus = "", @type = "text", wrap = "off" } })
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h4 class="card-title">İnternet (Opsiyonel)</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">Paket Adı</label>
+                                @Html.EditorFor(model => model.pinadi, new { htmlAttributes = new { @class = "form-control", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Hız</label>
+                                @Html.EditorFor(model => model.pinhiz, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Fiyat</label>
+                                @Html.EditorFor(model => model.pinfiyat, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Adı 2</label>
+                                @Html.EditorFor(model => model.pinadi2, new { htmlAttributes = new { @class = "form-control", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Hız 2</label>
+                                @Html.EditorFor(model => model.pinhiz2, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Fiyat 2</label>
+                                @Html.EditorFor(model => model.pinfiyat2, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Adı 3</label>
+                                @Html.EditorFor(model => model.pinadi3, new { htmlAttributes = new { @class = "form-control", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Hız 3</label>
+                                @Html.EditorFor(model => model.pinhiz3, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Fiyat 3</label>
+                                @Html.EditorFor(model => model.pinfiyat3, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Adı 4</label>
+                                @Html.EditorFor(model => model.pinadi4, new { htmlAttributes = new { @class = "form-control", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Hız 4</label>
+                                @Html.EditorFor(model => model.pinhiz4, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Fiyat 4</label>
+                                @Html.EditorFor(model => model.pinfiyat4, new { htmlAttributes = new { @class = "form-control ", size = "25", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Genel Bilgiler 2</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <!-- checkbox -->
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        @Html.EditorFor(model => model.paktif)
+                                        @Html.ValidationMessageFor(model => model.paktif, "", new { @class = "text-danger" })
+                                        <label for="customCheckbox1" class="custom-control-label">Dizi Paketi Aktif Mi</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        @Html.EditorFor(model => model.pdizi)
+                                        @Html.ValidationMessageFor(model => model.pdizi, "", new { @class = "text-danger" })
+                                        <label for="customCheckbox1" class="custom-control-label">Dizi Paketi</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        @Html.EditorFor(model => model.pfilm)
+                                        @Html.ValidationMessageFor(model => model.pfilm, "", new { @class = "text-danger" })
+                                        <label for="customCheckbox1" class="custom-control-label">Film Paketi</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        @Html.EditorFor(model => model.pmenuekle)
+                                        @Html.ValidationMessageFor(model => model.pmenuekle, "", new { @class = "text-danger" })
+                                        <label for="customCheckbox1" class="custom-control-label">Menüye Ekle</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <!-- radio -->
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        @Html.EditorFor(model => model.panasayfaekle)
+                                        @Html.ValidationMessageFor(model => model.panasayfaekle, "", new { @class = "text-danger" })
+                                        <label for="customCheckbox1" class="custom-control-label">Ana Sayfaya Eklensin</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        @Html.EditorFor(model => model.pspor)
+                                        @Html.ValidationMessageFor(model => model.pspor, "", new { @class = "text-danger" })
+                                        <label for="customCheckbox1" class="custom-control-label">Spor Paketi</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox">
+                                        @Html.EditorFor(model => model.ptaraftar)
+                                        @Html.ValidationMessageFor(model => model.ptaraftar, "", new { @class = "text-danger" })
+                                        <label for="customCheckbox1" class="custom-control-label">Taraftar Paketi</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="~/admin/pakets/" class="btn btn-secondary">Geri Gel</a>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+
+@section scripts{
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        var editor = CKEDITOR.instances['pyazi'];
+        if (editor) { editor.destroy(true); }
+
+        CKEDITOR.replace('pyazi', {
+            enterMode: CKEDITOR.ENTER_BR,
+            filebrowserBrowseUrl: '/Images?type=Images',
+            filebrowserFlashBrowseUrl: '/Images/?type=Flash',
+        });
+        CKFinder.setupCKEditor(BlogYazi);
+
+    </script>
+}

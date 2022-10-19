@@ -1,0 +1,181 @@
+section.campaign-list {
+    padding: 20px 0px 60px 0px;
+}
+
+    section.campaign-list .background-img {
+        height: 320px;
+        padding: 40px 21px;
+        position: relative;
+        background: url(../images/campaign-sales/beIN_liste.png) no-repeat;
+        background-size: contain;
+        border-radius: 8px;
+        width:100%;
+    }
+
+    section.campaign-list img.desktop-img {
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        display: block;
+        width: calc(100% - 30px);
+    }
+
+    section.campaign-list img.mobile-img {
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        display: none;
+        width: calc(100% - 30px);
+    }
+
+        section.campaign-list .background-img h1 {
+            margin-bottom: 25px;
+            z-index: 2;
+            position: relative;
+        }
+
+        section.campaign-list .background-img div.line {
+            height: 1px;
+            width: 100%;
+            max-width: 352px;
+            background-color: #6764A9;
+            z-index: 2;
+            position: relative;
+        }
+
+        section.campaign-list .background-img p {
+            margin-top: 15px;
+            max-width: 350px;
+            line-height: 26px;
+            z-index: 2;
+            position: relative;
+        }
+
+    section.package-list .card-background {
+        border: 1px solid #6F3E92;
+        border-radius: 10px;
+        padding: 10px 10px 30px 10px;
+        margin:0px 0px 85px 0px;
+        display:block;
+    }
+
+        section.package-list .card-background .top-image, section.package-list .card-background .top-image img {
+            width: 100%
+        }
+
+        section.package-list .card-background .mid-price {
+            width: 100%;
+            margin-top:19px;
+        }
+
+            section.package-list .card-background .mid-price h1 {
+                font-family: 'gilroy-r';
+                font-size: 21px;
+                line-height: 28px;
+                text-align: center;
+                color: #353535;
+            }
+
+            section.package-list .card-background .mid-price h2 {
+                font-size: 22px;
+                line-height: 27px;
+                font-family: 'gilroy-b';
+                text-align: center;
+                color: #8801E2;         
+            }
+            section.package-list .card-background .mid-price hr {
+                width: 50%;
+                margin-top: 12px;
+                margin-bottom: 0px;
+                padding: 0px;
+            }
+            section.package-list .card-background .bottom-description {
+                margin-top: 12px;
+                width: 100%
+            }
+
+            section.package-list .card-background .bottom-description p {
+                font-family: 'gilroy-m';
+                line-height: 20px;
+                text-align: center;
+                color: #353535;
+                min-height:80px;
+            }
+
+        section.package-list .card-background .detail-button{
+            background-color: #7FCD3E;
+            background: #7FCD3E linear-gradient( 180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%);
+            border-radius: 8px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            width: 60%;
+            display: block;
+            margin: auto;
+            text-align: center;
+            padding: 14px 50px;
+            color: white;
+            margin-top: 25px;
+            box-shadow: 0 16px 10px -10px rgba(33,41,33,0.2);
+        }
+
+
+    @media (max-width: 991px) {
+        section.campaign-list .background-img {
+            background-size: contain;
+            height: 100%;
+            background-position: top right !important;
+            transform: scale(1.);
+            padding: 20px 21px 20px 21px;
+            background-position: top right !important;
+        }
+            section.campaign-list .background-img p{
+                margin-top:0px;
+            }
+            section.campaign-list .background-img h1 {
+                font-size: 28px !important;
+            }
+            section .campaign-list img.desktop-img {
+                width: 100%;
+                position: absolute;
+                top: 0px;
+                z-index: 1;
+                display: none;
+            }
+
+        section.campaign-list img.mobile-img {
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            z-index: 1;
+            display: block !important;
+        }
+
+
+        section.package-list .card-background {
+            margin: 0px 0px 20px 0px;
+        }
+
+            section.package-list .card-background .detail-button {
+                width: 90%;
+            }
+    }
+@media (max-width: 640px) {
+    section.campaign-list .background-img {
+        background: url(../images/campaign-sales/mobil_banner.png) no-repeat !important;
+        background-size: contain;
+        height: 100%;
+        background-position: top right !important;
+        transform: scale(1.);
+        height: 438px;
+        padding: 195px 21px 40px 21px;
+        background-position: top right !important;
+        border-radius: 10px;
+    }
+}
+    @media (max-width: 600px) {
+        section.package-list .card-background {
+            margin: 0px 0px 20px 0px;
+        }
+    }

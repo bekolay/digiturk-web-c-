@@ -1,0 +1,74 @@
+﻿@model digiturkveri.kullanici
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>kullanici</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.kadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ksifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ksifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ksifretekrar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ksifretekrar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kaktifmi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kaktifmi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kolusturmatarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kolusturmatarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kurl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kurl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

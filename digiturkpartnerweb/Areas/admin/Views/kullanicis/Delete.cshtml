@@ -1,0 +1,80 @@
+﻿@model digiturkveri.kullanici
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>kullanici</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.kadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ksifre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ksifre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ksifretekrar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ksifretekrar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kaktifmi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kaktifmi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kolusturmatarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kolusturmatarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kemail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kemail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kurl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kurl)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

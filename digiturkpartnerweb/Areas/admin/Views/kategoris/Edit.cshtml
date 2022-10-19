@@ -1,0 +1,56 @@
+﻿@model digiturkveri.kategori
+
+@{
+
+    ViewBag.Title = "Kategori Düzenle";
+}
+
+<br />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.kateid)
+    @Html.HiddenFor(model => model.katetarih)
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Kategori Düzenle</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="inputName">Kategori Adı</label>
+                                    @Html.EditorFor(model => model.kateadi, new { htmlAttributes = new { @style = "", @class = "form-control", size = "25", @required = "required", autofocus = "", @type = "text" } })
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <label for="inputName">Kategori Aktif mi</label>
+                                    @Html.EditorFor(model => model.kateaktif)
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="/admin/kategoris/" class="btn btn-secondary">Geri Gel</a>
+                        <input type="submit" value="Kateogori Düzenle" class="btn btn-success float-right">
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+    </div>
+}
+
+

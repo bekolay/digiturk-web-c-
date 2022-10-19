@@ -1,0 +1,78 @@
+﻿@model digiturkpartnerweb.Controllers.LoginModel
+@{
+    ViewBag.Title = "Giris";
+}
+
+<section class="center-block">
+    <div class="container">
+        <div class="row">
+            <div class="center-block">
+                <div class="row">
+                    <div class="">
+                        <div class="">
+                            <div class="page-header text-center">
+
+                                <h1>Giriş Yap</h1>
+                            </div>
+                            <div class="container h-100">
+                                <div class="row h-100 justify-content-center align-items-center">
+                                <form method="post" class="form-outline mb-4" _lpchecked="1">
+                                    @Html.ValidationSummary(true)
+                                    @Html.AntiForgeryToken()
+                                    <div class="form-group ">
+                                        <div class="control-label">
+                                            <label id="username-lbl" for="username" class="required invalid">Telefon Numarası<span class="star"> *</span></label>
+                                        </div>
+                                        <div class="controls">
+                                            @Html.EditorFor(model => model.KullaniciAdi, new { htmlAttributes = new { @class = "form-control ", size = "25", @required = "required", autofocus = "", @type = "text" } })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="control-label">
+                                            <label id="password-lbl" for="password" class="required">Şifre<span class="star"> *</span></label>
+                                        </div>
+                                        <div class="controls">
+                                            @Html.TextBoxFor(model => model.Sifre, new { @class = "form-control", type = "password", id = "password" })
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="form-group d-flex justify-content-start">
+                                            <div class="controls">
+                                                <button type="submit" class="btn btn-info btn-rounded">Giriş</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @if (ViewBag.Error != null)
+                                    {
+                                        <div class="alert alert-danger">@ViewBag.Error</div>
+                                    }
+                                    @if (!ViewData.ModelState.IsValid)
+                                    {
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach (ModelState modelState in ViewData.ModelState.Values)
+                                                {
+                                                    foreach (ModelError error in modelState.Errors)
+                                                    {
+                                                        <li>@error.ErrorMessage</li>
+                                                    }
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+

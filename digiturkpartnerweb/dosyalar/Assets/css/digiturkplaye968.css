@@ -1,0 +1,318 @@
+.desc_card {
+    position: -webkit-sticky !important;
+    position: sticky !important; 
+    top: 10px !important;
+    background: url("../images/base/form_bg%402x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0px !important;
+    border-radius: 10px !important;
+    padding: 0px !important;
+}
+
+    .desc_card .card-header {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 28px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        border-color: rgba(255,255,255,0.2) !important;
+        padding-top: 33px;
+        padding-bottom: 15px;
+    }
+
+    .desc_card .card-body {
+        padding-top: 14px !important;
+    }
+
+    .desc_card .card-body ul li {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300 !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
+
+    .desc_card .card-body ul li:before {
+        background: transparent !important;
+    }
+
+    .desc_card .card-body a {
+        float: inherit !important;
+        left: 0 !important;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 42px;
+    }
+
+.digiturk-play-desc {
+    border: 1px solid #D0D0D0;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    margin: 20px 0px;
+    padding: 20px 0px;
+}
+
+.digiturk-play-desc .title {
+    color: #303030;
+    font-size: 36px;
+    line-height: 46px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.digiturk-play-desc .title span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.digiturk-play-desc .media-area {
+    display: flex;
+    justify-content: space-around;
+}
+
+.digiturk-play-desc .media-area .media {
+    display: block;
+    text-align: center;
+}
+
+.digiturk-play-desc .media-area .media img {
+    margin-bottom: 15px;
+}
+
+    .digiturk-play-desc .media-area .media div {
+        color: #303030;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .digiturk-play-desc .media-area .media p {
+        color: #303030;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 10px;
+    }
+
+.big-img-content {
+    background: linear-gradient(180deg, #36054F 0%, #1C0728 100%);
+    margin-top: 200px;
+}
+
+    .big-img-content img {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        display: block;
+        top: -145px;
+    }
+
+    .big-img-content .textarea h1 {
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 69px;
+        text-align: center;
+        margin-bottom: 38px;
+    }
+
+    .big-img-content .textarea p {
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 25px;
+        margin-bottom: 20px;
+    }
+
+    .big-img-content .textarea a {
+        border-radius: 25px;
+        background-color: #7FCD3E;
+        background: #7FCD3E linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%);
+        box-shadow: inset 0 1px 1px 0 rgba(255,255,255,0.5), 0 16px 24px -12px rgba(0,0,0,0.3);
+        width: 280px;
+        padding: 19px 0px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .big-img-content .textarea a:hover {
+        color: #FFF;
+    }
+
+    .big-img-content .textarea {
+        position: relative;
+        top: -80px;
+    }
+
+section.campaign-detail.digiturkplay {
+    padding-bottom: 0px !important;
+}
+
+#playModal .modal-content {
+    background: #230A5B;
+    background-size: cover;
+    border: 2px solid #FFF;
+    text-align: center;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+
+.confetti {
+    position: absolute;
+    width: 100%;
+}
+
+#playModal .modal-content .modal-body  {
+    padding-top: 60px;
+}
+
+    #playModal .modal-content .modal-body .title {
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        font-size: 30px;
+        line-height: 40px;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        font-style: italic;
+    }
+
+    #playModal .modal-content .modal-body p {
+        color: #FFFFFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 25px;
+        margin-bottom: 30px;
+        padding: 0px 100px;
+    }
+
+
+    #playModal .modal-content .modal-body .btn-modal {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        bottom: 5%;
+        text-align: center;
+        background-color: #A71F8E;
+        background: #A71F8E;
+        width: 200px;
+        border-radius: 6px;
+        box-shadow: none;
+        margin-bottom: 0px;
+        padding: 12px 0px;
+    }
+
+    #playModal .modal-content .modal-body a:hover {
+        color: #FFF;
+    }
+
+        #playModal .modal-content .btn-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            z-index: 888;
+        }
+
+@media (min-width: 576px) {
+    #playModal .modal-dialog {
+        max-width: 580px;
+        margin: 1.75rem auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .digiturk-play-desc .title {
+        font-size: 26px;
+    }
+
+    .digiturk-play-desc .media-area {
+        flex-wrap: wrap;
+    }
+
+    .digiturk-play-desc .media-area .media {
+        width: 50%;
+        margin-bottom: 14px;
+    }
+
+    .digiturkplay-bigimg {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .big-img-content img {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        display: block;
+        top: -55px;
+    }
+
+    .big-img-content {
+        background: linear-gradient(180deg, #36054F 0%, #1C0728 100%);
+        margin-top: 100px;
+    }
+
+        .big-img-content .textarea {
+            position: relative;
+            top: -40px;
+        }
+
+            .big-img-content .textarea h1 {
+                font-size: 28px;
+                margin-bottom: 0px;
+            }
+}
+
+.pretty {
+    margin-right: 0px;
+    margin-top: 10px !important;
+}
+
+.pretty .state label:after, 
+.pretty .state label:before {
+    top: 0px !important;
+}
+
+.pretty input:checked~.state.p-success .icon, 
+.pretty input:checked~.state.p-success .svg, 
+.pretty.p-toggle .state.p-success .icon, 
+.pretty.p-toggle .state.p-success .svg {
+    top: 1px !important;
+    left: 0px !important;
+    font-size: 0.7em !important;
+}
+
+.pretty input:checked~.state.p-success label:after, 
+.pretty.p-toggle .state.p-success label:after {
+    background-color: #7FCD3E;
+    background: #7FCD3E linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.contactForm .form-kvkk .pretty {
+    margin-top: 0px !important;
+    position: relative;
+    top: -30px;
+    margin-right: 0px;
+}
+
+@media (max-width: 767px) {
+    .desc_card {
+        margin-top: 20px;
+    }
+}
+
+    

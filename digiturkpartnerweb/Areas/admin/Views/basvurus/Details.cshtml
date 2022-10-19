@@ -1,0 +1,65 @@
+﻿@model digiturkveri.basvuru
+
+@{
+    ViewBag.Title = "Basvuru Detay";
+}
+
+<br />
+
+<div class="container">
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Genel Bilgiler</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">Basvuru Adı Soyadı</label>
+                                @Html.EditorFor(model => model.basvuruadisoyadi, new { htmlAttributes = new { @style = "", @class = "form-control", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Basvuru Tel</label>
+                                @Html.EditorFor(model => model.basvurutel, new { htmlAttributes = new { @class = "form-control ", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Paket Adı</label>
+                                @Html.EditorFor(model => model.paket.padi, new { htmlAttributes = new { @class = "form-control ", size = "25", @required = "required", autofocus = "", @type = "text", @disabled = "disabled" } })
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-12">
+                    <a href="~/admin/basvurus/" class="btn btn-secondary">Geri Gel</a>
+                </div>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+</div>
+
+@section scripts{
+    <script src="~/Content/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+        var editor = CKEDITOR.instances['pyazi'];
+        if (editor) { editor.destroy(true); }
+
+        CKEDITOR.replace('pyazi', {
+            enterMode: CKEDITOR.ENTER_BR,
+            filebrowserBrowseUrl: '/Images?type=Images',
+            filebrowserFlashBrowseUrl: '/Images/?type=Flash',
+        });
+        CKFinder.setupCKEditor(BlogYazi);
+
+    </script>
+}

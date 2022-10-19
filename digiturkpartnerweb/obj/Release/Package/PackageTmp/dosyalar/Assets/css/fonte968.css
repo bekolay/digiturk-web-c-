@@ -1,0 +1,73 @@
+﻿/* gilroy */
+
+@font-face {
+    font-family: 'gilroy-eb';
+    src: url('../font/Gilroy-ExtraBold.otf');
+}
+
+@font-face {
+    font-family: 'gilroy-b';
+    src: url('../font/Gilroy-Bold.otf');
+}
+
+@font-face {
+    font-family: 'gilroy-sb';
+    src: url('../font/Gilroy-SemiBold.otf');
+}
+
+@font-face {
+    font-family: 'gilroy-m';
+    src: url('../font/Gilroy-Medium.otf');
+}
+
+@font-face {
+    font-family: 'gilroy-r';
+    src: url('../font/Gilroy-Regular.otf');
+}
+
+@font-face {
+    font-family: 'gilroy-l';
+    src: url('../font/Gilroy-Light.otf');
+}
+
+/* gotham */
+
+@font-face {
+    font-family: 'gotham-mi';
+    src: url('../font/Gotham-MediumIta.otf');
+}
+
+@font-face {
+    font-family: 'gotham-li';
+    src: url('../font/Gotham-LightIta.otf');
+}
+
+@font-face {
+    font-family: 'gotham-bi';
+    src: url('../font/Gotham-BookIta.otf');
+}
+
+@font-face {
+    font-family: 'gotham-boldi';
+    src: url('../font/Gotham-BoldIta.otf');
+}
+
+@font-face {
+    font-family: 'gotham-blacki';
+    src: url('../font/Gotham-BlackIta.otf');
+}
+
+@font-face {
+    font-family: 'gotham-m';
+    src: url('../font/Gotham-Medium.otf');
+}
+
+@font-face {
+    font-family: 'gotham-l';
+    src: url('../font/Gotham-Light.otf');
+}
+
+@font-face {
+    font-family: 'gotham-bold';
+    src: url('../font/Gotham-Bold.otf');
+}
