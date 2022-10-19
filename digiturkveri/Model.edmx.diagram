@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ba9a6f99943a4f62a141eb3904214dac" Name="Diagram1">
+        <EntityTypeShape EntityType="digiturkModel.basvuru" Width="1.5" PointX="9.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.kategori" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.kategoriler" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.kullanici" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.paket" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.paketResim" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.Site_Ayar" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.webpages_Membership" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.webpages_OAuthMembership" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="digiturkModel.webpages_Roles" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="digiturkModel.FK_basvuru_paket" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.FK_kategori_kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.FK_paket_kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.FK_kategoriler_kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.FK_paket_kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.FK_paketResim_kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.FK_Site_Ayar_kullanici" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.FK_paket_paketResim" ManuallyRouted="false" />
+        <AssociationConnector Association="digiturkModel.webpages_UsersInRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

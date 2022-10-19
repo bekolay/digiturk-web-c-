@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="digiturkkampanyaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'digiturkkampanya.dbo.basvuru' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'digiturkkampanya.dbo.kategorikampanya' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="kategorikampanya">
+    <Key>
+      <PropertyRef Name="kateid" />
+      <PropertyRef Name="kid" />
+      <PropertyRef Name="kateadi" />
+      <PropertyRef Name="katetarih" />
+      <PropertyRef Name="kateurl" />
+      <PropertyRef Name="kateaktif" />
+    </Key>
+    <Property Name="kateid" Type="int" Nullable="false" />
+    <Property Name="kid" Type="int" Nullable="false" />
+    <Property Name="kateadi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="katetarih" Type="datetime" Nullable="false" />
+    <Property Name="kateurl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kateaktif" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'digiturkkampanya.dbo.kategoriler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'digiturkkampanya.dbo.paketkampanya' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="paketkampanya">
+    <Key>
+      <PropertyRef Name="pid" />
+      <PropertyRef Name="kid" />
+      <PropertyRef Name="kateid" />
+      <PropertyRef Name="padi" />
+      <PropertyRef Name="purl" />
+      <PropertyRef Name="paciklama" />
+      <PropertyRef Name="paktif" />
+      <PropertyRef Name="pyazi" />
+      <PropertyRef Name="paysayi" />
+      <PropertyRef Name="prid" />
+      <PropertyRef Name="ptarih" />
+    </Key>
+    <Property Name="pid" Type="int" Nullable="false" />
+    <Property Name="kid" Type="int" Nullable="false" />
+    <Property Name="kateid" Type="int" Nullable="false" />
+    <Property Name="padi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="purl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="paciklama" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pdizi" Type="bit" />
+    <Property Name="pfilm" Type="bit" />
+    <Property Name="pspor" Type="bit" />
+    <Property Name="pmenuekle" Type="bit" />
+    <Property Name="pinadi" Type="nvarchar(max)" />
+    <Property Name="pinadi2" Type="nvarchar(max)" />
+    <Property Name="pinadi3" Type="nvarchar(max)" />
+    <Property Name="pinadi4" Type="nvarchar(max)" />
+    <Property Name="pinhiz" Type="nvarchar(max)" />
+    <Property Name="pinhiz2" Type="nvarchar(max)" />
+    <Property Name="pinhiz3" Type="nvarchar(max)" />
+    <Property Name="pinhiz4" Type="nvarchar(max)" />
+    <Property Name="pinfiyat" Type="nvarchar(max)" />
+    <Property Name="pinfiyat2" Type="nvarchar(max)" />
+    <Property Name="pinfiyat3" Type="nvarchar(max)" />
+    <Property Name="pinfiyat4" Type="nvarchar(max)" />
+    <Property Name="pkampdetay" Type="nvarchar(max)" />
+    <Property Name="pinternet" Type="bit" />
+    <Property Name="paktif" Type="bit" Nullable="false" />
+    <Property Name="pyazi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="paysayi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="panasayfaekle" Type="bit" />
+    <Property Name="prid" Type="int" Nullable="false" />
+    <Property Name="ptarih" Type="datetime" Nullable="false" />
+    <Property Name="pfiyat" Type="nvarchar(max)" />
+    <Property Name="pipadres" Type="nvarchar(max)" />
+    <Property Name="ptaraftar" Type="bit" />
+    <Property Name="psenecekaciklama1" Type="nvarchar(max)" />
+    <Property Name="psenecekaciklama2" Type="nvarchar(max)" />
+    <Property Name="psenecekaciklama3" Type="nvarchar(max)" />
+    <Property Name="psenecekaciklama4" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat1" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat2" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat3" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat4" Type="nvarchar(max)" />
+    <Property Name="psenecekay1" Type="nvarchar" MaxLength="50" />
+    <Property Name="psenecekay2" Type="nvarchar" MaxLength="50" />
+    <Property Name="psenecekay3" Type="nvarchar" MaxLength="50" />
+    <Property Name="psenecekay4" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="digiturkkampanyaModelStoreContainer">
+    <EntitySet Name="kategorikampanya" EntityType="Self.kategorikampanya" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [kategorikampanya].[kateid] AS [kateid], 
+    [kategorikampanya].[kid] AS [kid], 
+    [kategorikampanya].[kateadi] AS [kateadi], 
+    [kategorikampanya].[katetarih] AS [katetarih], 
+    [kategorikampanya].[kateurl] AS [kateurl], 
+    [kategorikampanya].[kateaktif] AS [kateaktif]
+    FROM [dbo].[kategorikampanya] AS [kategorikampanya]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="paketkampanya" EntityType="Self.paketkampanya" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [paketkampanya].[pid] AS [pid], 
+    [paketkampanya].[kid] AS [kid], 
+    [paketkampanya].[kateid] AS [kateid], 
+    [paketkampanya].[padi] AS [padi], 
+    [paketkampanya].[purl] AS [purl], 
+    [paketkampanya].[paciklama] AS [paciklama], 
+    [paketkampanya].[pdizi] AS [pdizi], 
+    [paketkampanya].[pfilm] AS [pfilm], 
+    [paketkampanya].[pspor] AS [pspor], 
+    [paketkampanya].[pmenuekle] AS [pmenuekle], 
+    [paketkampanya].[pinadi] AS [pinadi], 
+    [paketkampanya].[pinadi2] AS [pinadi2], 
+    [paketkampanya].[pinadi3] AS [pinadi3], 
+    [paketkampanya].[pinadi4] AS [pinadi4], 
+    [paketkampanya].[pinhiz] AS [pinhiz], 
+    [paketkampanya].[pinhiz2] AS [pinhiz2], 
+    [paketkampanya].[pinhiz3] AS [pinhiz3], 
+    [paketkampanya].[pinhiz4] AS [pinhiz4], 
+    [paketkampanya].[pinfiyat] AS [pinfiyat], 
+    [paketkampanya].[pinfiyat2] AS [pinfiyat2], 
+    [paketkampanya].[pinfiyat3] AS [pinfiyat3], 
+    [paketkampanya].[pinfiyat4] AS [pinfiyat4], 
+    [paketkampanya].[pkampdetay] AS [pkampdetay], 
+    [paketkampanya].[pinternet] AS [pinternet], 
+    [paketkampanya].[paktif] AS [paktif], 
+    [paketkampanya].[pyazi] AS [pyazi], 
+    [paketkampanya].[paysayi] AS [paysayi], 
+    [paketkampanya].[panasayfaekle] AS [panasayfaekle], 
+    [paketkampanya].[prid] AS [prid], 
+    [paketkampanya].[ptarih] AS [ptarih], 
+    [paketkampanya].[pfiyat] AS [pfiyat], 
+    [paketkampanya].[pipadres] AS [pipadres], 
+    [paketkampanya].[ptaraftar] AS [ptaraftar], 
+    [paketkampanya].[psenecekaciklama1] AS [psenecekaciklama1], 
+    [paketkampanya].[psenecekaciklama2] AS [psenecekaciklama2], 
+    [paketkampanya].[psenecekaciklama3] AS [psenecekaciklama3], 
+    [paketkampanya].[psenecekaciklama4] AS [psenecekaciklama4], 
+    [paketkampanya].[psenecekfiyat1] AS [psenecekfiyat1], 
+    [paketkampanya].[psenecekfiyat2] AS [psenecekfiyat2], 
+    [paketkampanya].[psenecekfiyat3] AS [psenecekfiyat3], 
+    [paketkampanya].[psenecekfiyat4] AS [psenecekfiyat4], 
+    [paketkampanya].[psenecekay1] AS [psenecekay1], 
+    [paketkampanya].[psenecekay2] AS [psenecekay2], 
+    [paketkampanya].[psenecekay3] AS [psenecekay3], 
+    [paketkampanya].[psenecekay4] AS [psenecekay4]
+    FROM [dbo].[paketkampanya] AS [paketkampanya]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

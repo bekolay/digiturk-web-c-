@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="digiturkkampanyaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="kategorikampanya">
+          <Key>
+            <PropertyRef Name="kateid" />
+          </Key>
+          <Property Name="kateid" Type="int" Nullable="false" />
+          <Property Name="kateadi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="katetarih" Type="datetime" Nullable="false" />
+          <Property Name="kateurl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="kateaktif" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="paketkampanya">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kateid" Type="int" Nullable="false" />
+          <Property Name="padi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="purl" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="paciklama" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="pdizi" Type="bit" />
+          <Property Name="pfilm" Type="bit" />
+          <Property Name="pspor" Type="bit" />
+          <Property Name="pmenuekle" Type="bit" />
+          <Property Name="pinadi" Type="nvarchar(max)" />
+          <Property Name="pinadi2" Type="nvarchar(max)" />
+          <Property Name="pinadi3" Type="nvarchar(max)" />
+          <Property Name="pinadi4" Type="nvarchar(max)" />
+          <Property Name="pinhiz" Type="nvarchar(max)" />
+          <Property Name="pinhiz2" Type="nvarchar(max)" />
+          <Property Name="pinhiz3" Type="nvarchar(max)" />
+          <Property Name="pinhiz4" Type="nvarchar(max)" />
+          <Property Name="pinfiyat" Type="nvarchar(max)" />
+          <Property Name="pinfiyat2" Type="nvarchar(max)" />
+          <Property Name="pinfiyat3" Type="nvarchar(max)" />
+          <Property Name="pinfiyat4" Type="nvarchar(max)" />
+          <Property Name="pkampdetay" Type="nvarchar(max)" />
+          <Property Name="pinternet" Type="bit" />
+          <Property Name="paktif" Type="bit" Nullable="false" />
+          <Property Name="pyazi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="paysayi" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="panasayfaekle" Type="bit" />
+          <Property Name="ptarih" Type="datetime" Nullable="false" />
+          <Property Name="pfiyat" Type="nvarchar(max)" />
+          <Property Name="pipadres" Type="nvarchar(max)" />
+          <Property Name="ptaraftar" Type="bit" />
+          <Property Name="psenecekaciklama1" Type="nvarchar(max)" />
+          <Property Name="psenecekaciklama2" Type="nvarchar(max)" />
+          <Property Name="psenecekaciklama3" Type="nvarchar(max)" />
+          <Property Name="psenecekaciklama4" Type="nvarchar(max)" />
+          <Property Name="psenecekfiyat1" Type="nvarchar(max)" />
+          <Property Name="psenecekfiyat2" Type="nvarchar(max)" />
+          <Property Name="psenecekfiyat3" Type="nvarchar(max)" />
+          <Property Name="psenecekfiyat4" Type="nvarchar(max)" />
+          <Property Name="psenecekay1" Type="nvarchar" MaxLength="50" />
+          <Property Name="psenecekay2" Type="nvarchar" MaxLength="50" />
+          <Property Name="psenecekay3" Type="nvarchar" MaxLength="50" />
+          <Property Name="psenecekay4" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_paketkampanya_kategorikampanya">
+          <End Role="kategorikampanya" Type="Self.kategorikampanya" Multiplicity="1" />
+          <End Role="paketkampanya" Type="Self.paketkampanya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategorikampanya">
+              <PropertyRef Name="kateid" />
+            </Principal>
+            <Dependent Role="paketkampanya">
+              <PropertyRef Name="kateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="digiturkkampanyaModelStoreContainer">
+          <EntitySet Name="kategorikampanya" EntityType="Self.kategorikampanya" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="paketkampanya" EntityType="Self.paketkampanya" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_paketkampanya_kategorikampanya" Association="Self.FK_paketkampanya_kategorikampanya">
+            <End Role="kategorikampanya" EntitySet="kategorikampanya" />
+            <End Role="paketkampanya" EntitySet="paketkampanya" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="digiturkkampanyaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="digiturkkampanyaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="kategorikampanyas" EntityType="digiturkkampanyaModel.kategorikampanya" />
+          <EntitySet Name="paketkampanyas" EntityType="digiturkkampanyaModel.paketkampanya" />
+          <AssociationSet Name="FK_paketkampanya_kategorikampanya" Association="digiturkkampanyaModel.FK_paketkampanya_kategorikampanya">
+            <End Role="kategorikampanya" EntitySet="kategorikampanyas" />
+            <End Role="paketkampanya" EntitySet="paketkampanyas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="kategorikampanya">
+          <Key>
+            <PropertyRef Name="kateid" />
+          </Key>
+          <Property Name="kateid" Type="Int32" Nullable="false" />
+          <Property Name="kateadi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="katetarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="kateurl" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="kateaktif" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="paketkampanyas" Relationship="digiturkkampanyaModel.FK_paketkampanya_kategorikampanya" FromRole="kategorikampanya" ToRole="paketkampanya" />
+        </EntityType>
+        <EntityType Name="paketkampanya">
+          <Key>
+            <PropertyRef Name="pid" />
+          </Key>
+          <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kateid" Type="Int32" Nullable="false" />
+          <Property Name="padi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="purl" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="paciklama" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pdizi" Type="Boolean" />
+          <Property Name="pfilm" Type="Boolean" />
+          <Property Name="pspor" Type="Boolean" />
+          <Property Name="pmenuekle" Type="Boolean" />
+          <Property Name="pinadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinadi2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinadi3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinadi4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinhiz" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinhiz2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinhiz3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinhiz4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinfiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinfiyat2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinfiyat3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinfiyat4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pkampdetay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pinternet" Type="Boolean" />
+          <Property Name="paktif" Type="Boolean" Nullable="false" />
+          <Property Name="pyazi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="paysayi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="panasayfaekle" Type="Boolean" />
+          <Property Name="ptarih" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="pfiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="pipadres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ptaraftar" Type="Boolean" />
+          <Property Name="psenecekaciklama1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekaciklama2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekaciklama3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekaciklama4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekfiyat1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekfiyat2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekfiyat3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekfiyat4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekay1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekay2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekay3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="psenecekay4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="kategorikampanya" Relationship="digiturkkampanyaModel.FK_paketkampanya_kategorikampanya" FromRole="paketkampanya" ToRole="kategorikampanya" />
+        </EntityType>
+        <Association Name="FK_paketkampanya_kategorikampanya">
+          <End Type="digiturkkampanyaModel.kategorikampanya" Role="kategorikampanya" Multiplicity="1" />
+          <End Type="digiturkkampanyaModel.paketkampanya" Role="paketkampanya" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kategorikampanya">
+              <PropertyRef Name="kateid" />
+            </Principal>
+            <Dependent Role="paketkampanya">
+              <PropertyRef Name="kateid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="digiturkkampanyaModelStoreContainer" CdmEntityContainer="digiturkkampanyaEntities1">
+          <EntitySetMapping Name="kategorikampanyas">
+            <EntityTypeMapping TypeName="digiturkkampanyaModel.kategorikampanya">
+              <MappingFragment StoreEntitySet="kategorikampanya">
+                <ScalarProperty Name="kateaktif" ColumnName="kateaktif" />
+                <ScalarProperty Name="kateurl" ColumnName="kateurl" />
+                <ScalarProperty Name="katetarih" ColumnName="katetarih" />
+                <ScalarProperty Name="kateadi" ColumnName="kateadi" />
+                <ScalarProperty Name="kateid" ColumnName="kateid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="paketkampanyas">
+            <EntityTypeMapping TypeName="digiturkkampanyaModel.paketkampanya">
+              <MappingFragment StoreEntitySet="paketkampanya">
+                <ScalarProperty Name="psenecekay4" ColumnName="psenecekay4" />
+                <ScalarProperty Name="psenecekay3" ColumnName="psenecekay3" />
+                <ScalarProperty Name="psenecekay2" ColumnName="psenecekay2" />
+                <ScalarProperty Name="psenecekay1" ColumnName="psenecekay1" />
+                <ScalarProperty Name="psenecekfiyat4" ColumnName="psenecekfiyat4" />
+                <ScalarProperty Name="psenecekfiyat3" ColumnName="psenecekfiyat3" />
+                <ScalarProperty Name="psenecekfiyat2" ColumnName="psenecekfiyat2" />
+                <ScalarProperty Name="psenecekfiyat1" ColumnName="psenecekfiyat1" />
+                <ScalarProperty Name="psenecekaciklama4" ColumnName="psenecekaciklama4" />
+                <ScalarProperty Name="psenecekaciklama3" ColumnName="psenecekaciklama3" />
+                <ScalarProperty Name="psenecekaciklama2" ColumnName="psenecekaciklama2" />
+                <ScalarProperty Name="psenecekaciklama1" ColumnName="psenecekaciklama1" />
+                <ScalarProperty Name="ptaraftar" ColumnName="ptaraftar" />
+                <ScalarProperty Name="pipadres" ColumnName="pipadres" />
+                <ScalarProperty Name="pfiyat" ColumnName="pfiyat" />
+                <ScalarProperty Name="ptarih" ColumnName="ptarih" />
+                <ScalarProperty Name="panasayfaekle" ColumnName="panasayfaekle" />
+                <ScalarProperty Name="paysayi" ColumnName="paysayi" />
+                <ScalarProperty Name="pyazi" ColumnName="pyazi" />
+                <ScalarProperty Name="paktif" ColumnName="paktif" />
+                <ScalarProperty Name="pinternet" ColumnName="pinternet" />
+                <ScalarProperty Name="pkampdetay" ColumnName="pkampdetay" />
+                <ScalarProperty Name="pinfiyat4" ColumnName="pinfiyat4" />
+                <ScalarProperty Name="pinfiyat3" ColumnName="pinfiyat3" />
+                <ScalarProperty Name="pinfiyat2" ColumnName="pinfiyat2" />
+                <ScalarProperty Name="pinfiyat" ColumnName="pinfiyat" />
+                <ScalarProperty Name="pinhiz4" ColumnName="pinhiz4" />
+                <ScalarProperty Name="pinhiz3" ColumnName="pinhiz3" />
+                <ScalarProperty Name="pinhiz2" ColumnName="pinhiz2" />
+                <ScalarProperty Name="pinhiz" ColumnName="pinhiz" />
+                <ScalarProperty Name="pinadi4" ColumnName="pinadi4" />
+                <ScalarProperty Name="pinadi3" ColumnName="pinadi3" />
+                <ScalarProperty Name="pinadi2" ColumnName="pinadi2" />
+                <ScalarProperty Name="pinadi" ColumnName="pinadi" />
+                <ScalarProperty Name="pmenuekle" ColumnName="pmenuekle" />
+                <ScalarProperty Name="pspor" ColumnName="pspor" />
+                <ScalarProperty Name="pfilm" ColumnName="pfilm" />
+                <ScalarProperty Name="pdizi" ColumnName="pdizi" />
+                <ScalarProperty Name="paciklama" ColumnName="paciklama" />
+                <ScalarProperty Name="purl" ColumnName="purl" />
+                <ScalarProperty Name="padi" ColumnName="padi" />
+                <ScalarProperty Name="kateid" ColumnName="kateid" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

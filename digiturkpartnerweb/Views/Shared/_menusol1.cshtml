@@ -1,0 +1,12 @@
+﻿@model IEnumerable<digiturkveri.paket>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <a title="@item.padi" alt="@item.padi" href="~/paket/@item.purl">@item.padi</a>
+}
+
+
+

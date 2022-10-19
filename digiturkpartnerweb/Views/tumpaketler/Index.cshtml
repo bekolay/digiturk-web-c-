@@ -1,0 +1,247 @@
+﻿@model IEnumerable<digiturkveri.paket>
+@{
+    ViewBag.Title = "Tüm Paketler";
+}
+
+
+
+
+<section class="campaign-detail campaign-all has-price">
+    <div class="container-fluid mobile-banner-area">
+        <div class="row">
+            <div class="col-12 mobile-padding">
+                <div class="img-area">
+                    <img class="img-fluid" src="/dosyalar/Dosyalar/campaign/subpage-mobile-banner/yildiz-dolu-640x360%20(5).webp" alt="T&#252;m Kampanyalar" />
+                    <div class="text-area">
+                        <div class="title white-color f-21 gilroy-eb fw-Bold">T&#252;m Kampanyalar</div>
+                        <hr />
+                        <div class="sub-title white-color f-17 gilroy-eb fw-Bold">Digiturk paketlerinde aradığınız her şeyi kolayca bulacaksınız!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="btn-area mt-10" data-animation="fadeIn" data-animation-delay="300">
+                    <a class="white-color gilroy-l fw-Bold f-15 text-center d-block br-30 btn-modal" href="javascript:setModalInputs('T&#252;m Kampanyalar', '', 'tum-kampanyalar');">Hemen Başvur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card br-14">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <div class="img-area position-relative">
+                            <input type="hidden" name="price" class="priceNumber" />
+                            <img class="img-fluid banner-img br-14" src="/dosyalar/Dosyalar/campaign/yildiz-dolu-750x250%20(2).webp" alt="" />
+                            <div class="text-area" data-animation="fadeInDown" data-animation-delay="350">
+                                <div class="title white-color f-36 gilroy-eb fw-Bold">T&#252;m Kampanyalar</div>
+                                <hr />
+                                <p class="white-color f-16 gilroy-eb fw-Bold">Digiturk paketlerinde aradığınız her şeyi kolayca bulacaksınız!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @*<div class="col-lg-6 col-md-6">
+                            <div class="middle-area">
+                                <div class="title gilroy-eb f-21 black-color">Anadolu Taraftar Paketi</div>
+                                <div class="sub-title gilroy-l f-13 fw-900 mt-10">Anadolu Takımları şimdi Digiturk’te!</div>
+                                <div class="owl-carousel owl-theme owl-loaded owl-drag campaignAll">
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/eurosport1.png" alt="" />
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/eurosport2.png" alt="" />
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/wta-1.png" alt="" />
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/lig1.png" alt="" />
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/aile-logolar-2.png" alt="" />
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-stars.png" alt="" />
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-series-comedy.png" alt="" />
+                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/discovery.png" alt="" />
+                                </div>
+                            </div>
+                        </div>*@
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-12 media-area campaign_all">
+                            <div class="desc-card desc br-14">
+                                <input type="hidden" name="price" class="priceNumber" value="@item.pfiyat" />
+                                <div class="row no-gutters">
+                                    <div class="col-lg-3 col-md-3">
+                                        @if (item.pspor == true)
+                                        {
+                                            <div class="left-area">
+                                                <div class="campaign-img d-none d-md-block" style="background-image: url('/dosyalar/Dosyalar/campaign/taraftar-paketi-260x228.webp')"></div>
+                                                <img class="img-fluid br-10 d-block d-md-none" src="/dosyalar/Dosyalar/campaign/taraftar-paketi-516x300.webp" alt="@item.padi" />
+                                            </div>
+                                        }
+                                        else if (item.pdizi == true)
+                                        {
+                                            <div class="left-area">
+                                                <div class="campaign-img d-none d-md-block" style="background-image: url('/dosyalar/Dosyalar/campaign/dizinin-yildizi-260x228.webp')"></div>
+                                                <img class="img-fluid br-10 d-block d-md-none" src="/dosyalar/Dosyalar/campaign/dizinin-yildizi-516x300.webp" alt="@item.padi" />
+                                            </div>
+                                        }
+                                        else if (item.pfilm == true)
+                                        {
+                                            <div class="left-area">
+                                                <div class="campaign-img d-none d-md-block" style="background-image: url('/dosyalar/Dosyalar/campaign/filmin-yildizi-260x228.webp')"></div>
+                                                <img class="img-fluid br-10 d-block d-md-none" src="/dosyalar/Dosyalar/campaign/filmin-yildizi-516x300.webp" alt="@item.padi" />
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="left-area">
+                                                <div class="campaign-img d-none d-md-block" style="background-image: url('/dosyalar/Dosyalar/campaign/internetin-yenisi-260x228.webp')"></div>
+                                                <img class="img-fluid br-10 d-block d-md-none" src="/dosyalar/Dosyalar/campaign/internetin-yenisi-516x300.webp" alt="@item.padi" />
+                                            </div>
+                                        }
+
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <div class="middle-area">
+                                            <div class="title gilroy-eb f-21 black-color">@item.padi</div>
+                                            <div class="sub-title gilroy-l f-13 fw-900 mt-10">@item.paciklama</div>
+                                            @if (item.pspor == true)
+                                            {
+                                                <div class="owl-carousel owl-theme owl-loaded owl-drag campaignAll">
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/eurosport1.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/eurosport2.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/wta-1.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/lig1.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/aile-logolar-2.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-stars.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-series-comedy.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/discovery.webp" alt="" />
+                                                </div>
+                                            }
+                                            else if (item.pdizi == true)
+                                            {
+                                                <div class="owl-carousel owl-theme owl-loaded owl-drag campaignAll">
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/film-3.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-stars.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-series-comedy.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bbc-first.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/disney-junior.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/nickelodeon-hd.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/disney-xd.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/da-vinci.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/discovery.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/discovery-science.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bbc-earth.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-sports-haber.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/eurosport1.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/eurosport2.webp" alt="" />
+                                                </div>
+                                            }
+                                            else if (item.pfilm == true)
+                                            {
+                                                <div class="owl-carousel owl-theme owl-loaded owl-drag campaignAll">
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bbc-earth.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bbc-first.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-action.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-action2.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-family.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-premiere.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-premiere2.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-stars.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-movies-turk.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/bein-series-comedy.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/discovery-science.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/discovery.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/film-3.webp" alt="" />
+                                                    <img src="/dosyalar/Dosyalar/campaign/detay-logo/lig1.webp" alt="" />
+                                                </div>
+                                            }
+                                            else
+                                            {
+
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3">
+                                        <div class="right-area">
+                                            <div class="price-area">
+                                                <div class="top-text f-12 white-color gotham-m text-center">@item.paysayi Ay Boyunca</div>
+
+                                                <div class="bottom-text">
+                                                    <span class="new-price">
+                                                        <em class="f-48 fw-Bold white-color gotham-bold newPrice">
+
+                                                        </em>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="btn-area">
+                                                <a class="white-color gilroy-eb f-16 fw-Bold br-25" href="~/paket/@item.purl">Detaylı İncele</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div><div class="col-lg-4 right-form-area">
+
+                <div class="form">
+                    <div class="form-area purple-bg br-14">
+                        <form action="/tumpaketler/anasayfadan" method="post" class="appealForm">
+                            <div class="form-top">
+                                <div class="media">
+                                    <div class="image-area position-relative mr-3">
+                                        <div class="call-animation-outer"></div>
+                                        <div class="call-animation-outer-fill"></div>
+                                        <div class="call-animation">
+                                            <i class="form-phone-ico"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="mt-0 f-15 white-color gilroy-l fw-Bold">BİZE ULAŞIN</h5>
+                                        <a href="tel:@Html.Partial("_numara", digiturkpartnerweb.Models.Data.siteayar)" class="white-color gilroy-eb f-30 fw-Bold number mt-11 d-block" id="rightFormPhoneNumber">@Html.Partial("_numara", digiturkpartnerweb.Models.Data.siteayar)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+
+                                <h4 class="f-24 white-color gotham-bold">Sizi Arayalım</h4>
+                                <p class="f-14 white-color gilroy-l mt-13 d-block ln-24">
+                                    Kampanyalarımız ve t&#252;m gelişmeler hakkında detaylı bilgi almak i&#231;in formu doldurun, hemen sizi arayalım.
+                                </p>
+                                <input type="hidden" name="permalink" value="tum-kampanyalar" />
+                                <input type="hidden" name="campaign_name" value="T&#252;m Kampanyalar" />
+                                <input type="hidden" name="price" />
+                                <input type="hidden" name="ipadresim" id="ipadresim" value="@Request.UserHostAddress" />
+
+                                <div class="form-group">
+                                    <label class="white-color gilroy-eb fw-Bold f-15 input-label" for="name">AD SOYAD</label>
+                                    <input type="text" class="form-control gilroy-l br-4" id="kelime" name="kelime" placeholder="Ad ve soyadınızı girin" autocomplete="off"
+                                           required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="white-color gilroy-eb fw-Bold f-15 input-label" for="phone">TELEFON</label>
+                                    <input type="text" class="form-control phone-mask gilroy-l br-4" id="tele" name="tele" placeholder="(5__) ___ __ __" autocomplete="off"
+                                           required>
+                                </div>
+                                <div class="form-kvkk">
+                                    <p>Potansiyel Müşteri Aydınlatma metni için <a target="_blank" href="/dosyalar/Assets//pdf/digiturk_kvkk.pdf">tıklayın</a>.</p>
+                                    <div class="pretty p-svg p-curve">
+                                        <input type="checkbox" id="isbullet" name="isbullet" />
+                                        <div class="state p-success">
+                                            <!-- svg path -->
+                                            <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                            </svg>
+                                            <label>Digiturk (Digital Platform Teknoloji Hizmetleri A.Ş.) tarafından  formda belirtmiş olduğum iletişim adresi üzerinden tarafıma ticari elektronik ileti gönderilmesini kabul ediyorum.</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="white-color gilroy-l fw-Bold f-18 text-center d-block br-30 margin-auto btn-submit">GÖNDER</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

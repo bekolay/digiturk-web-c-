@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="digiturkkampanyaModelStoreContainer" CdmEntityContainer="digiturkkampanyaEntities">
+    <EntitySetMapping Name="kategorikampanya">
+      <EntityTypeMapping TypeName="digiturkkampanyaModel.kategorikampanya">
+        <MappingFragment StoreEntitySet="kategorikampanya">
+          <ScalarProperty Name="kateaktif" ColumnName="kateaktif" />
+          <ScalarProperty Name="kateurl" ColumnName="kateurl" />
+          <ScalarProperty Name="katetarih" ColumnName="katetarih" />
+          <ScalarProperty Name="kateadi" ColumnName="kateadi" />
+          <ScalarProperty Name="kid" ColumnName="kid" />
+          <ScalarProperty Name="kateid" ColumnName="kateid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paketkampanya">
+      <EntityTypeMapping TypeName="digiturkkampanyaModel.paketkampanya">
+        <MappingFragment StoreEntitySet="paketkampanya">
+          <ScalarProperty Name="psenecekay4" ColumnName="psenecekay4" />
+          <ScalarProperty Name="psenecekay3" ColumnName="psenecekay3" />
+          <ScalarProperty Name="psenecekay2" ColumnName="psenecekay2" />
+          <ScalarProperty Name="psenecekay1" ColumnName="psenecekay1" />
+          <ScalarProperty Name="psenecekfiyat4" ColumnName="psenecekfiyat4" />
+          <ScalarProperty Name="psenecekfiyat3" ColumnName="psenecekfiyat3" />
+          <ScalarProperty Name="psenecekfiyat2" ColumnName="psenecekfiyat2" />
+          <ScalarProperty Name="psenecekfiyat1" ColumnName="psenecekfiyat1" />
+          <ScalarProperty Name="psenecekaciklama4" ColumnName="psenecekaciklama4" />
+          <ScalarProperty Name="psenecekaciklama3" ColumnName="psenecekaciklama3" />
+          <ScalarProperty Name="psenecekaciklama2" ColumnName="psenecekaciklama2" />
+          <ScalarProperty Name="psenecekaciklama1" ColumnName="psenecekaciklama1" />
+          <ScalarProperty Name="ptaraftar" ColumnName="ptaraftar" />
+          <ScalarProperty Name="pipadres" ColumnName="pipadres" />
+          <ScalarProperty Name="pfiyat" ColumnName="pfiyat" />
+          <ScalarProperty Name="ptarih" ColumnName="ptarih" />
+          <ScalarProperty Name="prid" ColumnName="prid" />
+          <ScalarProperty Name="panasayfaekle" ColumnName="panasayfaekle" />
+          <ScalarProperty Name="paysayi" ColumnName="paysayi" />
+          <ScalarProperty Name="pyazi" ColumnName="pyazi" />
+          <ScalarProperty Name="paktif" ColumnName="paktif" />
+          <ScalarProperty Name="pinternet" ColumnName="pinternet" />
+          <ScalarProperty Name="pkampdetay" ColumnName="pkampdetay" />
+          <ScalarProperty Name="pinfiyat4" ColumnName="pinfiyat4" />
+          <ScalarProperty Name="pinfiyat3" ColumnName="pinfiyat3" />
+          <ScalarProperty Name="pinfiyat2" ColumnName="pinfiyat2" />
+          <ScalarProperty Name="pinfiyat" ColumnName="pinfiyat" />
+          <ScalarProperty Name="pinhiz4" ColumnName="pinhiz4" />
+          <ScalarProperty Name="pinhiz3" ColumnName="pinhiz3" />
+          <ScalarProperty Name="pinhiz2" ColumnName="pinhiz2" />
+          <ScalarProperty Name="pinhiz" ColumnName="pinhiz" />
+          <ScalarProperty Name="pinadi4" ColumnName="pinadi4" />
+          <ScalarProperty Name="pinadi3" ColumnName="pinadi3" />
+          <ScalarProperty Name="pinadi2" ColumnName="pinadi2" />
+          <ScalarProperty Name="pinadi" ColumnName="pinadi" />
+          <ScalarProperty Name="pmenuekle" ColumnName="pmenuekle" />
+          <ScalarProperty Name="pspor" ColumnName="pspor" />
+          <ScalarProperty Name="pfilm" ColumnName="pfilm" />
+          <ScalarProperty Name="pdizi" ColumnName="pdizi" />
+          <ScalarProperty Name="paciklama" ColumnName="paciklama" />
+          <ScalarProperty Name="purl" ColumnName="purl" />
+          <ScalarProperty Name="padi" ColumnName="padi" />
+          <ScalarProperty Name="kateid" ColumnName="kateid" />
+          <ScalarProperty Name="kid" ColumnName="kid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

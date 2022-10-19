@@ -1,0 +1,47 @@
+﻿@model IEnumerable<digiturkveri.paket>
+@{
+    Layout = null;
+}
+
+
+@foreach (var item in Model)
+{
+    <div class="col-xl-6 col-lg-6 col-12" data-animation="fadeIn" data-animation-delay="300">
+        <div class="row padding-15">
+            <a class="campaign-card white-bg br-18 w-100" title="digiturk" alt="digiturk" href="~/paket/@item.purl">
+                <div class="col-xl-6 col-lg-8 col-md-9 col-sm-9">
+                    <div class="left-area">
+                        <h3 class="f-21 gilroy-eb black-color card-title">@item.padi</h3>
+                        <p class="f-13 gilroy-l black-color fw-900 mt-15 ln-18 card-subtext">@item.paciklama</p>
+                        <div class="br-21 white-color gilroy-l f-14 text-center d-block btn-detail">Detaylı İncele</div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-4 col-md-3 col-sm-9">
+                    <div class="img-area">
+                        @if (item.pspor == true)
+                        {
+                            <img class="img-fluid br-10 d-none d-md-block" title="digiturk" alt="digiturk" src="~/dosyalar/Dosyalar/campaign/taraftar-paketi-260x228.webp" alt="@item.padi" />
+                            <img class="img-fluid br-10 d-block d-md-none" title="digiturk" alt="digiturk" src="~/dosyalar/Dosyalar/campaign/taraftar-paketi-516x300.webp" alt="@item.padi" />
+                        }
+                        else if (item.pdizi == true)
+                        {
+                            <img class="img-fluid br-10 d-none d-md-block" title="digiturk" alt="digiturk" src="~/dosyalar/Dosyalar/campaign/ailenin-yildizi-260x228%20(1).png" alt="@item.padi" />
+                            <img class="img-fluid br-10 d-block d-md-none" title="digiturk" alt="digiturk" src="~/dosyalar/Dosyalar/campaign/ailenin-yildizi-260x228%20(1).png" alt="@item.padi" />
+                        }
+                        else if (item.pfilm == true)
+                        {
+                            <img class="img-fluid br-10 d-none d-md-block" title="digiturk" alt="digiturk" src="~/dosyalar/Dosyalar/campaign/filmin-yildizi-516x300.webp" alt="@item.padi" />
+                            <img class="img-fluid br-10 d-block d-md-none" title="digiturk" alt="digiturk" src="~/dosyalar/Dosyalar/campaign/filmin-yildizi-516x300.webp" alt="@item.padi" />
+                        }
+                        else
+                        {
+                            <img class="img-fluid br-10 d-none d-md-block" title="digiturk" alt="digiturk" src="~/dosyalar/Dosyalar/campaign/internetin-yenisi-260x228.webp" alt="@item.padi">
+                            <img class="img-fluid br-10 d-block d-md-none" title="digiturk" alt="digiturk" src="/dosyalar/Dosyalar/campaign/internetin-yenisi-516x300.webp" alt="@item.padi">
+                        }
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+}

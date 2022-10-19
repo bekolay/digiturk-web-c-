@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="digiturkkampanyaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="kategorikampanya">
+    <Key>
+      <PropertyRef Name="kateid" />
+    </Key>
+    <Property Name="kateid" Type="int" Nullable="false" />
+    <Property Name="kateadi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="katetarih" Type="datetime" Nullable="false" />
+    <Property Name="kateurl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kateaktif" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="paketkampanya">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kateid" Type="int" Nullable="false" />
+    <Property Name="padi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="purl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="paciklama" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="pdizi" Type="bit" />
+    <Property Name="pfilm" Type="bit" />
+    <Property Name="pspor" Type="bit" />
+    <Property Name="pmenuekle" Type="bit" />
+    <Property Name="pinadi" Type="nvarchar(max)" />
+    <Property Name="pinadi2" Type="nvarchar(max)" />
+    <Property Name="pinadi3" Type="nvarchar(max)" />
+    <Property Name="pinadi4" Type="nvarchar(max)" />
+    <Property Name="pinhiz" Type="nvarchar(max)" />
+    <Property Name="pinhiz2" Type="nvarchar(max)" />
+    <Property Name="pinhiz3" Type="nvarchar(max)" />
+    <Property Name="pinhiz4" Type="nvarchar(max)" />
+    <Property Name="pinfiyat" Type="nvarchar(max)" />
+    <Property Name="pinfiyat2" Type="nvarchar(max)" />
+    <Property Name="pinfiyat3" Type="nvarchar(max)" />
+    <Property Name="pinfiyat4" Type="nvarchar(max)" />
+    <Property Name="pkampdetay" Type="nvarchar(max)" />
+    <Property Name="pinternet" Type="bit" />
+    <Property Name="paktif" Type="bit" Nullable="false" />
+    <Property Name="pyazi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="paysayi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="panasayfaekle" Type="bit" />
+    <Property Name="ptarih" Type="datetime" Nullable="false" />
+    <Property Name="pfiyat" Type="nvarchar(max)" />
+    <Property Name="pipadres" Type="nvarchar(max)" />
+    <Property Name="ptaraftar" Type="bit" />
+    <Property Name="psenecekaciklama1" Type="nvarchar(max)" />
+    <Property Name="psenecekaciklama2" Type="nvarchar(max)" />
+    <Property Name="psenecekaciklama3" Type="nvarchar(max)" />
+    <Property Name="psenecekaciklama4" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat1" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat2" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat3" Type="nvarchar(max)" />
+    <Property Name="psenecekfiyat4" Type="nvarchar(max)" />
+    <Property Name="psenecekay1" Type="nvarchar" MaxLength="50" />
+    <Property Name="psenecekay2" Type="nvarchar" MaxLength="50" />
+    <Property Name="psenecekay3" Type="nvarchar" MaxLength="50" />
+    <Property Name="psenecekay4" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_paketkampanya_kategorikampanya">
+    <End Role="kategorikampanya" Type="Self.kategorikampanya" Multiplicity="1" />
+    <End Role="paketkampanya" Type="Self.paketkampanya" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategorikampanya">
+        <PropertyRef Name="kateid" />
+      </Principal>
+      <Dependent Role="paketkampanya">
+        <PropertyRef Name="kateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="digiturkkampanyaModelStoreContainer">
+    <EntitySet Name="kategorikampanya" EntityType="Self.kategorikampanya" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="paketkampanya" EntityType="Self.paketkampanya" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_paketkampanya_kategorikampanya" Association="Self.FK_paketkampanya_kategorikampanya">
+      <End Role="kategorikampanya" EntitySet="kategorikampanya" />
+      <End Role="paketkampanya" EntitySet="paketkampanya" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

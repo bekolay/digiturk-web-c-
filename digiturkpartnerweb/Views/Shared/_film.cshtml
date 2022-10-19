@@ -1,0 +1,31 @@
+﻿@model IEnumerable<digiturkveri.paket>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <li data-transition="slideleft" data-slotamount="0" data-thumb="">
+        <img src="/dosyalar/assets/images/banner/dummy.webp" title="digiturk" alt="digiturk" data-lazyload="/dosyalar/assets/images/banner/spor_layers/sporcular_bg.webp"
+             alt="Dummy Image" />
+        <div class="tp-caption sfl rs-parallaxlevel-0 slideText1 white-color f-36 gotham-bi"
+             data-x="30" data-y="74" data-speed="600" data-start="600" data-easing="Power3.easeInOut"
+             data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
+            TAKIMININ MAÇLARI VE
+        </div>
+        <div class="tp-caption sfl slideText2 white-color f-36 gotham-boldi" data-x="30"
+             data-y="125" data-speed="600" data-start="600" data-easing="Power3.easeInOut"
+             data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 3;">
+            EN POPÜLER DİZİLER!
+        </div>
+        <a title="digiturk" alt="digiturk" href="~/paket/@item.purl" class="tp-caption sfb customout rs-parallaxlevel-0 detail-button white-color gilroy-l f-13 br-18"
+           data-x="30" data-y="190" data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+           data-speed="600" data-start="500" data-easing="Power3.easeInOut"
+           data-elementdelay="0.1" data-endelementdelay="0.1" style="z-index: 5;">
+            Detaylı
+            Bilgi
+        </a>
+    </li>
+}
+
+

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="digiturkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="basvuru">
+    <Key>
+      <PropertyRef Name="basvuruid" />
+    </Key>
+    <Property Name="basvuruid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="basvuruadisoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvurutel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="basvurukabul" Type="Boolean" Nullable="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="basipadres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="basvurutarih" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="paket" Relationship="Self.FK_basvuru_paket" FromRole="basvuru" ToRole="paket" />
+  </EntityType>
+  <EntityType Name="kategori">
+    <Key>
+      <PropertyRef Name="kateid" />
+    </Key>
+    <Property Name="kateid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <Property Name="kateadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="katetarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="kateurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kateaktif" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="kullanici" Relationship="Self.FK_kategori_kullanici" FromRole="kategori" ToRole="kullanici" />
+    <NavigationProperty Name="pakets" Relationship="Self.FK_paket_kategori" FromRole="kategori" ToRole="paket" />
+  </EntityType>
+  <EntityType Name="kategoriler">
+    <Key>
+      <PropertyRef Name="kategorid" />
+    </Key>
+    <Property Name="kategorid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kategoriadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kategoriurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kategoritarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="kategoriaktif" Type="Boolean" Nullable="false" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="kullanici" Relationship="Self.FK_kategoriler_kullanici" FromRole="kategoriler" ToRole="kullanici" />
+  </EntityType>
+  <EntityType Name="kullanici">
+    <Key>
+      <PropertyRef Name="kid" />
+    </Key>
+    <Property Name="kid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ksifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ksifretekrar" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kaktifmi" Type="Boolean" Nullable="false" />
+    <Property Name="kolusturmatarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="kemail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kurl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="kategoris" Relationship="Self.FK_kategori_kullanici" FromRole="kullanici" ToRole="kategori" />
+    <NavigationProperty Name="kategorilers" Relationship="Self.FK_kategoriler_kullanici" FromRole="kullanici" ToRole="kategoriler" />
+    <NavigationProperty Name="pakets" Relationship="Self.FK_paket_kullanici" FromRole="kullanici" ToRole="paket" />
+    <NavigationProperty Name="paketResims" Relationship="Self.FK_paketResim_kullanici" FromRole="kullanici" ToRole="paketResim" />
+    <NavigationProperty Name="Site_Ayar" Relationship="Self.FK_Site_Ayar_kullanici" FromRole="kullanici" ToRole="Site_Ayar" />
+    <NavigationProperty Name="webpages_Roles" Relationship="Self.webpages_UsersInRoles" FromRole="kullanici" ToRole="webpages_Roles" />
+  </EntityType>
+  <EntityType Name="paket">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <Property Name="kateid" Type="Int32" Nullable="false" />
+    <Property Name="padi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="purl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="paciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pdizi" Type="Boolean" />
+    <Property Name="pfilm" Type="Boolean" />
+    <Property Name="pspor" Type="Boolean" />
+    <Property Name="pmenuekle" Type="Boolean" />
+    <Property Name="pinadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinadi2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinadi3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinadi4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pkampdetay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinternet" Type="Boolean" />
+    <Property Name="paktif" Type="Boolean" Nullable="false" />
+    <Property Name="pyazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="paysayi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="panasayfaekle" Type="Boolean" />
+    <Property Name="prid" Type="Int32" Nullable="false" />
+    <Property Name="ptarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="pfiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pipadres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ptaraftar" Type="Boolean" />
+    <Property Name="psenecekaciklama1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekaciklama2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekaciklama3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekaciklama4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="basvurus" Relationship="Self.FK_basvuru_paket" FromRole="paket" ToRole="basvuru" />
+    <NavigationProperty Name="kategori" Relationship="Self.FK_paket_kategori" FromRole="paket" ToRole="kategori" />
+    <NavigationProperty Name="kullanici" Relationship="Self.FK_paket_kullanici" FromRole="paket" ToRole="kullanici" />
+    <NavigationProperty Name="paketResim" Relationship="Self.FK_paket_paketResim" FromRole="paket" ToRole="paketResim" />
+  </EntityType>
+  <EntityType Name="paketResim">
+    <Key>
+      <PropertyRef Name="prid" />
+    </Key>
+    <Property Name="prid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="presimadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="prtarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="praktif" Type="Boolean" Nullable="false" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="kullanici" Relationship="Self.FK_paketResim_kullanici" FromRole="paketResim" ToRole="kullanici" />
+    <NavigationProperty Name="pakets" Relationship="Self.FK_paket_paketResim" FromRole="paketResim" ToRole="paket" />
+  </EntityType>
+  <EntityType Name="Site_Ayar">
+    <Key>
+      <PropertyRef Name="ayarid" />
+    </Key>
+    <Property Name="ayarid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <Property Name="sitetel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ayartarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="siteadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="kullanici" Relationship="Self.FK_Site_Ayar_kullanici" FromRole="Site_Ayar" ToRole="kullanici" />
+  </EntityType>
+  <EntityType Name="webpages_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ConfirmationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsConfirmed" Type="Boolean" />
+    <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="webpages_OAuthMembership">
+    <Key>
+      <PropertyRef Name="Provider" />
+      <PropertyRef Name="ProviderUserId" />
+    </Key>
+    <Property Name="Provider" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderUserId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="webpages_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="kullanicis" Relationship="Self.webpages_UsersInRoles" FromRole="webpages_Roles" ToRole="kullanici" />
+  </EntityType>
+  <Association Name="FK_basvuru_paket">
+    <End Role="paket" Type="Self.paket" Multiplicity="0..1" />
+    <End Role="basvuru" Type="Self.basvuru" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paket">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="basvuru">
+        <PropertyRef Name="pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kategori_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="1" />
+    <End Role="kategori" Type="Self.kategori" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kid" />
+      </Principal>
+      <Dependent Role="kategori">
+        <PropertyRef Name="kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_paket_kategori">
+    <End Role="kategori" Type="Self.kategori" Multiplicity="1" />
+    <End Role="paket" Type="Self.paket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kategori">
+        <PropertyRef Name="kateid" />
+      </Principal>
+      <Dependent Role="paket">
+        <PropertyRef Name="kateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_kategoriler_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="1" />
+    <End Role="kategoriler" Type="Self.kategoriler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kid" />
+      </Principal>
+      <Dependent Role="kategoriler">
+        <PropertyRef Name="kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_paket_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="1" />
+    <End Role="paket" Type="Self.paket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kid" />
+      </Principal>
+      <Dependent Role="paket">
+        <PropertyRef Name="kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_paketResim_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="1" />
+    <End Role="paketResim" Type="Self.paketResim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kid" />
+      </Principal>
+      <Dependent Role="paketResim">
+        <PropertyRef Name="kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Site_Ayar_kullanici">
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="1" />
+    <End Role="Site_Ayar" Type="Self.Site_Ayar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="kullanici">
+        <PropertyRef Name="kid" />
+      </Principal>
+      <Dependent Role="Site_Ayar">
+        <PropertyRef Name="kid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_paket_paketResim">
+    <End Role="paketResim" Type="Self.paketResim" Multiplicity="1" />
+    <End Role="paket" Type="Self.paket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paketResim">
+        <PropertyRef Name="prid" />
+      </Principal>
+      <Dependent Role="paket">
+        <PropertyRef Name="prid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="webpages_UsersInRoles">
+    <End Role="webpages_Roles" Type="Self.webpages_Roles" Multiplicity="*" />
+    <End Role="kullanici" Type="Self.kullanici" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="digiturkEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="basvurus" EntityType="Self.basvuru" />
+    <EntitySet Name="kategoris" EntityType="Self.kategori" />
+    <EntitySet Name="kategorilers" EntityType="Self.kategoriler" />
+    <EntitySet Name="kullanicis" EntityType="Self.kullanici" />
+    <EntitySet Name="pakets" EntityType="Self.paket" />
+    <EntitySet Name="paketResims" EntityType="Self.paketResim" />
+    <EntitySet Name="Site_Ayars" EntityType="Self.Site_Ayar" />
+    <EntitySet Name="webpages_Membership" EntityType="Self.webpages_Membership" />
+    <EntitySet Name="webpages_OAuthMembership" EntityType="Self.webpages_OAuthMembership" />
+    <EntitySet Name="webpages_Roles" EntityType="Self.webpages_Roles" />
+    <AssociationSet Name="FK_basvuru_paket" Association="Self.FK_basvuru_paket">
+      <End Role="paket" EntitySet="pakets" />
+      <End Role="basvuru" EntitySet="basvurus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kategori_kullanici" Association="Self.FK_kategori_kullanici">
+      <End Role="kullanici" EntitySet="kullanicis" />
+      <End Role="kategori" EntitySet="kategoris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_paket_kategori" Association="Self.FK_paket_kategori">
+      <End Role="kategori" EntitySet="kategoris" />
+      <End Role="paket" EntitySet="pakets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_kategoriler_kullanici" Association="Self.FK_kategoriler_kullanici">
+      <End Role="kullanici" EntitySet="kullanicis" />
+      <End Role="kategoriler" EntitySet="kategorilers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_paket_kullanici" Association="Self.FK_paket_kullanici">
+      <End Role="kullanici" EntitySet="kullanicis" />
+      <End Role="paket" EntitySet="pakets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_paketResim_kullanici" Association="Self.FK_paketResim_kullanici">
+      <End Role="kullanici" EntitySet="kullanicis" />
+      <End Role="paketResim" EntitySet="paketResims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Site_Ayar_kullanici" Association="Self.FK_Site_Ayar_kullanici">
+      <End Role="kullanici" EntitySet="kullanicis" />
+      <End Role="Site_Ayar" EntitySet="Site_Ayars" />
+    </AssociationSet>
+    <AssociationSet Name="FK_paket_paketResim" Association="Self.FK_paket_paketResim">
+      <End Role="paketResim" EntitySet="paketResims" />
+      <End Role="paket" EntitySet="pakets" />
+    </AssociationSet>
+    <AssociationSet Name="webpages_UsersInRoles" Association="Self.webpages_UsersInRoles">
+      <End Role="webpages_Roles" EntitySet="webpages_Roles" />
+      <End Role="kullanici" EntitySet="kullanicis" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

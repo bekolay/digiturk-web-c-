@@ -1,0 +1,519 @@
+﻿﻿@model digiturkveri.paket
+@{
+    ViewBag.Title = Model.padi;
+}
+
+
+<div class="modal fade formModal" role="dialog" aria-labelledby="formModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <img class="btn-close" src="~/dosyalar/Assets/images/base/close.svg" data-dismiss="modal">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="title white-color gilroy-eb f-30 fw-Bold">Sizi Arayalım</div>
+                        <p class="white-color f-16 gilroy-l mt-15 subtext">Kampanyalarımız ve tüm gelişmeler hakkında detaylı bilgi almak için formu doldurun, hemen sizi arayalım.</p>
+                    </div>
+                </div>
+                <form action="/tumpaketler/basvuru" method="post" class="form-inline">
+                    <div class="form-group mb-2 first-field">
+                        <label class="f-15 gilroy-eb white-color input-label" for="name">AD SOYAD</label>
+                        <input type="text" id="kelime" name="kelime" class="form-control input-md gilroy-l br-4" placeholder="Ad ve soyadınızı girin" autocomplete="off" required="required">
+                    </div>
+                    <input type="hidden" name="numara" id="numara" value="@Model.pid" />
+                    <input type="hidden" name="basipadress" id="basipadress" value="@Request.UserHostAddress" />
+                    <div class="form-group mx-sm-3 mb-2 second-field">
+                        <label class="f-15 gilroy-eb white-color input-label" for="phone">TELEFON</label>
+                        <input type="text" id="tele" name="tele" class="form-control input-md gilroy-l br-4 phone-mask" placeholder="(5__) ___ __ __" autocomplete="off" required="required">
+                    </div>
+                    <label class="f-15 gilroy-eb white-color input-label" for="phone" type="text" id="numara" name="numara" hidden>@Html.HiddenFor(model => model.pid)</label>
+                    <a class="white-color gilroy-l fw-Bold f-18 text-center d-block br-30 margin-auto btn-submit mb-2" href="javascript:;" onclick="SendUtmParameter(this)">Gönder</a>
+                    <div class="form-kvkk">
+                        <p>Potansiyel Müşteri Aydınlatma metni için <a target="_blank" href="Assets/pdf/digiturk_kvkk.pdf">tıklayın</a>.</p>
+                        <div class="pretty p-svg p-curve">
+                            <input type="checkbox" id="isbullet" name="isbullet" />
+                            <div class="state p-success">
+                                <!-- svg path -->
+                                <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                    <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                </svg>
+                                <label>Digiturk (Digital Platform Teknoloji Hizmetleri A.Ş.) tarafından  formda belirtmiş olduğum iletişim adresi üzerinden tarafıma ticari elektronik ileti gönderilmesini kabul ediyorum.</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <hr />
+                <div class="row">
+                    <div class="col-12">
+                        <p class="white-color f-16 gilroy-l">Ayrıca tüm sorularınız için bize aşağıdaki telefon numarasından ulaşabilirsiniz.</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="media mt-35">
+                            <div class="image-area position-relative mr-3">
+                                <div class="call-animation-outer"></div>
+                                <div class="call-animation-outer-fill"></div>
+                                <div class="call-animation">
+                                    <i class="form-phone-ico"></i>
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="mt-0 f-15 white-color gilroy-l fw-Bold">BİZE ULAŞIN</h5>
+                                <a href="tel:@Html.Partial("_numara", digiturkpartnerweb.Models.Data.siteayar)" class="white-color gilroy-eb f-30 fw-Bold number mt-11 d-block">@Html.Partial("_numara", digiturkpartnerweb.Models.Data.siteayar)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="campaign-detail has-price">
+    <div class="container-fluid mobile-banner-area">
+        <div class="row">
+            <div class="col-12 mobile-padding">
+                <div class="img-area">
+                    @if (Model.pdizi == true)
+                    {
+                        <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/ailenin-yildizi-750x250.webp" alt="@Model.padi" />
+                    }
+                    else if (Model.pfilm == true)
+                    {
+                        <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/filmin-yildizi-750x250.webp" alt="@Model.padi" />
+                    }
+                    else if (Model.pspor == true)
+                    {
+                        <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/sporun-yildizi-750x250%20(5).webp" alt="@Model.padi" />
+                    }
+                    else if (Model.pinternet == true)
+                    {
+                        <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/internetin-yenisi-750x250.webp" alt="@Model.padi" />
+                    }
+                    else if (Model.ptaraftar == true)
+                    {
+                        <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/subpage-mobile-banner/taraftar-paketi-640x360 (2).webp" alt="@Model.padi" />
+                    }
+                    else { }
+
+                    <div class="text-area">
+                        <div class="title white-color f-21 gilroy-eb fw-Bold">@Model.padi</div>
+                        <hr />
+                        <div class="sub-title white-color f-17 gilroy-eb fw-Bold">@Model.paciklama</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+
+                <div class="price-area d-flex" data-animation="fadeInUp" data-animation-delay="300">
+                    <input type="hidden" name="price" class="priceNumber" value="@Model.pfiyat" />/>
+                    <div class="white-color gotham-bold f-13 text">
+                        <div>
+                            @Model.paysayi Ay boyunca
+                        </div>
+                    </div>
+                    <span class="new-price">
+                        <em class="f-48 fw-Bold white-color gotham-bold newPrice">
+
+                        </em>
+                    </span>
+                </div>
+                <div class="btn-area" data-animation="fadeIn" data-animation-delay="300">
+                    <a class="white-color gilroy-l fw-Bold f-15 text-center d-block br-30 btn-modal" href="javascript:setModalInputs('Avrupa`nın Yıldızı Paketi', '69', 'avrupanin-yildizi');">Hemen Başvur</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card br-14">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <div class="img-area position-relative">
+                            @if (Model.pdizi == true)
+                            {
+                                <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/ailenin-yildizi-750x250.webp" alt="@Model.padi" />
+                            }
+                            else if (Model.pfilm == true)
+                            {
+                                <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/filmin-yildizi-750x250.webp" alt="@Model.padi" />
+                            }
+                            else if (Model.pspor == true)
+                            {
+                                <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/sporun-yildizi-750x250%20(5).webp" alt="@Model.padi" />
+                            }
+                            else if (Model.ptaraftar == true)
+                            {
+                                <img class="img-fluid" src="~/dosyalar/Dosyalar/campaign/taraftar-paketi-750x250%20(4).webp" alt="@Model.padi" />
+                            }
+                            else
+                            {
+                                <img class="img-fluid banner-img br-14" src="~/dosyalar/Dosyalar/campaign/internetin-yenisi-750x250.webp" alt="@Model.padi" />
+                            }
+                            <div class="text-area" data-animation="fadeInDown" data-animation-delay="350">
+                                <div class="title white-color f-36 gilroy-eb fw-Bold">@Model.padi</div>
+                                <hr />
+                                <p class="white-color f-16 gilroy-eb fw-Bold">@Model.paciklama</p>
+                            </div>
+                            <div class="price-area d-flex" data-animation="fadeInUp" data-animation-delay="400">
+                                <input type="hidden" name="price" class="priceNumber" value="69" />
+                                <div class="white-color gotham-bold f-13 text">
+                                    <div>
+                                        12 Ay boyunca
+                                    </div>
+                                </div>
+                                <span class="new-price">
+                                    <em class="f-48 fw-Bold white-color gotham-bold newPrice">
+
+                                    </em>
+                                </span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                            </div>
+                        </div>
+                        <div class="row w-100">
+                            <div class="col-md-12">
+                                <ul class="black-color f-15 gilroy-l">
+                                    @Html.Raw(Model.pyazi)
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="row w-100 mobile-none">
+                            <div class="col-md-4 offset-md-8">
+                                <a class="white-color gilroy-l fw-Bold f-18 text-center d-block br-30 btn-modal" href="javascript:setModalInputs('Avrupa`nın Yıldızı Paketi', '69', 'avrupanin-yildizi');">Hemen Başvur</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 media-area">
+
+                    @if (Model.pspor == true)
+                    {
+                        <h3 class="f-21 gilroy-eb black-color card-title mt-30">@Model.padi Paketini Neden Almalıyım?</h3>
+                        <div class="row">
+                            <div class="col-lg-12 media-area">
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="HD" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">HD Kalitesinde Birbirinden Heyecanlı Spor Karşılaşmaları</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">TFF 1. Lig&rsquo;in t&uuml;m karşılaşmaları, Serie A, Ligue 1, Euroleague, WTA ve &ccedil;ok daha fazlası.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Bein Sports" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">En keyifli beIN Sports Programları</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">beIN FC, beIN Asist, beIN Final, beIN Euroleague, BSL St&uuml;dyo, Alo beIN, Vay Bee, İnteraktif gibi t&uuml;m spor tutkunlarını ekrana bağlayacak programlar ile ma&ccedil; analizleri, yorumlar ve eğlence. &Uuml;stelik beIN Connect ile yayın akışına bağlı kalmadan Dİlediğiniz Zaman sizinle!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Bein Connect" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Dilediğin Yerde Spor Keyfi</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">BeIN Connect ile hi&ccedil; bir ek &uuml;cret &ouml;demeden t&uuml;m canlı ma&ccedil;lar ve spor programlarını web,cep ve tabletten Dilediğin Yerde izleyebilme imkanı!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Bein Movies Series" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Eğlencenin Adresi!</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">Bol yıldızlı yapımların olduğu beIN MOVIES STARS ve unutulmaz sitcom&rsquo;lar ile kahkahanın vazge&ccedil;ilmez adresi beIN SERIES COMEDY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else if (Model.pfilm == true)
+                    {
+                        <h3 class="f-21 gilroy-eb black-color card-title mt-30">@Model.padi Paketini Neden Almalıyım?</h3>
+                        <div class="col-lg-12 media-area">
+                            <div class="desc-card desc br-14">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Herkese G&ouml;re İ&ccedil;erik" /></div>
+                                    <div class="col-lg-9">
+                                        <div class="media-body">
+                                            <h5 class="mt-0 gilroy-eb f-18 purple-color">Belgesel ve &Ccedil;ocuk Kanalları</h5>
+                                            <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">Birbirinden g&uuml;zel i&ccedil;erikler bu pakette!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desc-card desc br-14">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="TV&rsquo;de ilk kez yayınlanan 40 yeni film" /></div>
+                                    <div class="col-lg-9">
+                                        <div class="media-body">
+                                            <h5 class="mt-0 gilroy-eb f-18 purple-color">&Ouml;d&uuml;ll&uuml; beIN Kanalları</h5>
+                                            <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">D&uuml;nya mutfağının farklı tatlarına uzanan geniş bir i&ccedil;erikle beIN Gurme, T&uuml;rkiye&rsquo;nin ilk yerli belgesel kanalı beIZ ile yemek ve eğlence temalı beIN Home&amp;Entertainment</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desc-card desc br-14">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="4 Ekranda İzleme &Ouml;zg&uuml;rl&uuml;ğ&uuml;" /></div>
+                                    <div class="col-lg-9">
+                                        <div class="media-body">
+                                            <h5 class="mt-0 gilroy-eb f-18 purple-color">4 Ekranda İzleme &Ouml;zg&uuml;rl&uuml;ğ&uuml;</h5>
+                                            <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">Hi&ccedil;bir ek &uuml;cret &ouml;demeden en sevdiğiniz programları beIN CONNECT ile TV'den, web'den, cepten veya tabletten izleyin!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    else if (Model.ptaraftar == true)
+                    {
+                        <h3 class="f-21 gilroy-eb black-color card-title mt-30">@Model.padi Taraftar Neden Almalıyım?</h3>
+                        <div class="media-area">
+                            <div class="col-lg-12 media-area">
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="HD" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Takımınızın ma&ccedil;larını HD kalitesinde izleyin!</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">S&uuml;per Lig&rsquo;de tuttuğunuz takımın t&uuml;m karşılaşmaları ve spora dair &ccedil;ok daha fazlası</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="En Keyifli Spor Programları" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">En Keyifli Spor Programları!</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">S&uuml;per Lig,&nbsp; Vay Bee, Interaktif gibi t&uuml;m spor tutkunları i&ccedil;in analizler, farklı yorumlar ve eğlence bu pakette.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Dilediğin Yerde Spor Keyfi" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Dilediğin Yerde Spor Keyfi</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">beIN CONNECT ile hi&ccedil;bir ek &uuml;cret &ouml;demeden takımınızın TFF 1. Lig dahil t&uuml;m canlı ma&ccedil;larını ve spor programlarını web, cep ve tabletten &ldquo;Dilediğin Yerde&rdquo; izleme imkanı!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Eğlencenin Adresi" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Eğlencenin adresi!</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">Bol yıldızlı yapımların olduğu beIN MOVIES STARS ve unutulmaz sitcom&rsquo;lar ile kahkahanın vazge&ccedil;ilmez adresi beIN SERIES COMEDY</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            }
+                            else if (Model.pdizi == true)
+                            {
+                            <h3 class="f-21 gilroy-eb black-color card-title mt-30">Dizi  Paketini Neden Almalıyım?</h3>
+                            <div class="media-area">
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Belgesel Ve &Ccedil;ocuk Kanalları" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Belgesel ve &Ccedil;ocuk Kanalları</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">D&uuml;nyaca &uuml;nl&uuml; ve kaliteli belgesel kanalları ve her yaşta &ccedil;ocuğa hitap eden &ccedil;ocuk kanalları</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Doya Doya Spor" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Doya Doya Spor</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">&nbsp;S&uuml;per 1. Lig karşılaşmaları ve daha bir &ccedil;ok spor i&ccedil;eriğinin yerli ve yabancı spor kanalları</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="Bein Movies Series" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">Eğlencenin Adresi!</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">Comedy, Drama, Sci-Fi, Vice kanallarının yanı sıra, bol yıldızlı yapımların olduğu beIN Movies Stars kanalıyla eğlenceyi doyasıya yaşayın!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc-card desc br-14">
+                                    <div class="row no-gutters">
+                                        <div class="col-lg-3"><img src="~/dosyalar/Assets/images/logo/hd.png" alt="4 Ekranda İzleme &Ouml;zg&uuml;rl&uuml;ğ&uuml;" /></div>
+                                        <div class="col-lg-9">
+                                            <div class="media-body">
+                                                <h5 class="mt-0 gilroy-eb f-18 purple-color">4 Ekranda İzleme &Ouml;zg&uuml;rl&uuml;ğ&uuml;</h5>
+                                                <p class="black-color f-13 fw-900 gilroy-l ln-18 mt-10">Hi&ccedil;bir ek &uuml;cret &ouml;demeden en sevdiğiniz programları beIN CONNECT ile TV'den, web'den, cepten veya tabletten izleyin!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                            else if (Model.pinternet == true)
+                            {
+                            <h3 class="f-21 gilroy-eb black-color card-title mt-30">@Model.padi Paketini Neden Almalıyım?</h3>
+                            <div class="d-table digiturk-table-responsive unreceipted-table">
+                                <div class="d-table-head">
+                                    <div class="d-table-row white-color gilroy-l f-15 fw-500">
+                                        <div style="width: 20%;" class="d-table-cell">Digiturk Paketi</div>
+                                        <div style="width: 20%;" class="d-table-cell">İnternet Paketi</div>
+                                        <div style="width: 20%;" class="d-table-cell">Kampanya Fiyati</div>
+                                    </div>
+                                </div>
+                                <div class="d-table-body gilroy-l f-15 fw-900">
+                                    <div class="d-table-row">
+                                        <div class="d-table-cell">@Model.pinadi</div>
+                                        <div class="d-table-cell">@Model.pinhiz Mbps'ye kadar&nbsp;</div>
+                                        <div class="d-table-cell">@Model.pinfiyat TL/Ay</div>
+                                    </div>
+                                </div>
+                                <div class="d-table-body gilroy-l f-15 fw-900">
+                                    <div class="d-table-row">
+                                        <div class="d-table-cell">@Model.pinadi2</div>
+                                        <div class="d-table-cell">@Model.pinhiz2 Mbps'ye kadar&nbsp;</div>
+                                        <div class="d-table-cell">@Model.pinfiyat2 TL/Ay</div>
+                                    </div>
+                                </div>
+                                <div class="d-table-body gilroy-l f-15 fw-900">
+                                    <div class="d-table-row">
+                                        <div class="d-table-cell">@Model.pinadi3</div>
+                                        <div class="d-table-cell">@Model.pinhiz3 Mbps'ye kadar&nbsp;</div>
+                                        <div class="d-table-cell">@Model.pinfiyat3 TL/Ay</div>
+                                    </div>
+                                </div>
+                                <div class="d-table-body gilroy-l f-15 fw-900">
+                                    <div class="d-table-row">
+                                        <div class="d-table-cell">@Model.pinadi4</div>
+                                        <div class="d-table-cell">@Model.pinhiz4 Mbps'ye kadar&nbsp;</div>
+                                        <div class="d-table-cell">@Model.pinfiyat4 TL/Ay</div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                            else { }
+                        </div>
+
+
+                        <div id="accordion" data-toggle="collapse" data-target="#detailOne" aria-expanded="false" class="collapsed">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0 active">
+                                        <button class="btn btn-link btn-collapse collapsed" data-toggle="collapse" data-target="#detailOne" aria-expanded="false" aria-controls="detailOne">
+                                            Kampanya Detayları
+                                        </button>
+                                    </h5>
+                                    <div class="plus"></div>
+                                </div>
+                                <div id="detailOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body collapse-scroll">
+                                        <div class="title black-color gilroy-eb f-19 mt-10">Kampanya Bilgileri</div>
+                                        <p class="black-color gilroy-l fw-900 f-14 mt-10 ln-18">@Model.pkampdetay</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            <div class="col-lg-4 right-form-area">
+
+                <div class="form">
+                    <div class="form-area purple-bg br-14">
+                        <div class="appealForm">
+                            <div class="form-top">
+                                <div class="media">
+                                    <div class="image-area position-relative mr-3">
+                                        <div class="call-animation-outer"></div>
+                                        <div class="call-animation-outer-fill"></div>
+                                        <div class="call-animation">
+                                            <i class="form-phone-ico"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <h5 class="mt-0 f-15 white-color gilroy-l fw-Bold">BİZE ULAŞIN</h5>
+                                        <a href="tel:@Html.Partial("_numara", digiturkpartnerweb.Models.Data.siteayar)" class="white-color gilroy-eb f-30 fw-Bold number mt-11 d-block" id="rightFormPhoneNumber">@Html.Partial("_numara", digiturkpartnerweb.Models.Data.siteayar)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form action="/tumpaketler/basvuru2" method="post" class="form-inline">
+                                    <h4 class="f-24 white-color gotham-bold">Sizi Arayalım</h4>
+                                    <p class="f-14 white-color gilroy-l mt-13 d-block ln-24">
+                                        Kampanyalarımız ve t&#252;m gelişmeler hakkında detaylı bilgi almak i&#231;in formu doldurun, hemen sizi arayalım.
+                                    </p>
+                                    <input type="hidden" name="numara1" id="numara1" value="@Model.pid" />
+                                    <input type="hidden" name="basipadres1" id="basipadres1" value="@Request.UserHostAddress" />
+                                    <div class="form-group">
+                                        <label class="white-color gilroy-eb fw-Bold f-15 input-label" for="name">AD SOYAD</label>
+                                        <input type="text" class="form-control gilroy-l br-4" id="kelime1" name="kelime1" placeholder="Ad ve soyadınızı girin" autocomplete="off"
+                                               required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="white-color gilroy-eb fw-Bold f-15 input-label" for="phone">TELEFON</label>
+                                        <input type="text" class="form-control phone-mask gilroy-l br-4" id="tele1" name="tele1" placeholder="(5__) ___ __ __" autocomplete="off"
+                                               required>
+                                    </div>
+                                    <input type="hidden" name="basipadres1" id="basipadres1" value="@Request.UserHostAddress" />
+                                    <div class="form-kvkk">
+                                        <p>Potansiyel Müşteri Aydınlatma metni için <a target="_blank" href="Assets/pdf/digiturk_kvkk.pdf">tıklayın</a>.</p>
+                                        <div class="pretty p-svg p-curve">
+                                            <input type="checkbox" id="isbullet" name="isbullet" />
+                                            <div class="state p-success">
+                                                <!-- svg path -->
+                                                <svg class="svg svg-icon" viewBox="0 0 20 20">
+                                                    <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+                                                </svg>
+                                                <label>Digiturk (Digital Platform Teknoloji Hizmetleri A.Ş.) tarafından  formda belirtmiş olduğum iletişim adresi üzerinden tarafıma ticari elektronik ileti gönderilmesini kabul ediyorum.</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="white-color gilroy-l fw-Bold f-18 text-center d-block br-30 margin-auto btn-submit">Gönder</button>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+

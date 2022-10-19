@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="digiturkkampanyaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="digiturkkampanyaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="kategorikampanya" EntityType="digiturkkampanyaModel.kategorikampanya" />
+    <EntitySet Name="paketkampanya" EntityType="digiturkkampanyaModel.paketkampanya" />
+  </EntityContainer>
+  <EntityType Name="kategorikampanya">
+    <Key>
+      <PropertyRef Name="kateid" />
+      <PropertyRef Name="kid" />
+      <PropertyRef Name="kateadi" />
+      <PropertyRef Name="katetarih" />
+      <PropertyRef Name="kateurl" />
+      <PropertyRef Name="kateaktif" />
+    </Key>
+    <Property Name="kateid" Type="Int32" Nullable="false" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <Property Name="kateadi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="katetarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="kateurl" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="kateaktif" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="paketkampanya">
+    <Key>
+      <PropertyRef Name="pid" />
+      <PropertyRef Name="kid" />
+      <PropertyRef Name="kateid" />
+      <PropertyRef Name="padi" />
+      <PropertyRef Name="purl" />
+      <PropertyRef Name="paciklama" />
+      <PropertyRef Name="paktif" />
+      <PropertyRef Name="pyazi" />
+      <PropertyRef Name="paysayi" />
+      <PropertyRef Name="prid" />
+      <PropertyRef Name="ptarih" />
+    </Key>
+    <Property Name="pid" Type="Int32" Nullable="false" />
+    <Property Name="kid" Type="Int32" Nullable="false" />
+    <Property Name="kateid" Type="Int32" Nullable="false" />
+    <Property Name="padi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="purl" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="paciklama" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pdizi" Type="Boolean" />
+    <Property Name="pfilm" Type="Boolean" />
+    <Property Name="pspor" Type="Boolean" />
+    <Property Name="pmenuekle" Type="Boolean" />
+    <Property Name="pinadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinadi2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinadi3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinadi4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinhiz4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinfiyat4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pkampdetay" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pinternet" Type="Boolean" />
+    <Property Name="paktif" Type="Boolean" Nullable="false" />
+    <Property Name="pyazi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="paysayi" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="panasayfaekle" Type="Boolean" />
+    <Property Name="prid" Type="Int32" Nullable="false" />
+    <Property Name="ptarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="pfiyat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="pipadres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ptaraftar" Type="Boolean" />
+    <Property Name="psenecekaciklama1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekaciklama2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekaciklama3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekaciklama4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekfiyat4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="psenecekay4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
